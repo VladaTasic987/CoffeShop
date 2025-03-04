@@ -1,0 +1,56 @@
+
+import { GeneralForm } from './assets/RegisterFormComponents/GeneralForm'
+import './App.css'
+
+
+import logo from './assets/Images/logo.png'
+import forgotPassOne from './assets/Images/forgotPassOne.png'
+import forgotPassTwo from './assets/Images/forgotPassTwo.png'
+import forgotPassThree from './assets/Images/forgotPassThree.png'
+import forgotPassFour from './assets/Images/forgotPassFour.png'
+import warningIcon from './assets/Images/warningIcon.png'
+import statusBar from './assets/Images/statusBar.png'
+import avatar from './assets/Images/avatar.png'
+import arrowForward from './assets/Images/arrowForward.png'
+import coffeImg from './assets/Images/coffeImg.png'
+import plus from './assets/Images/plus.png'
+import cups from './assets/Images/cups.png'
+import wheels from './assets/Images/wheels.png'
+import minus from './assets/Images/minus.png'
+import smallCup from './assets/Images/smallCup.png'
+import mediumCup from './assets/Images/mediumCup.png'
+import largeCup from './assets/Images/largeCup.png'
+import delBtn from './assets/Images/delBtn.png'
+
+
+
+function App() {
+  
+
+  return (
+    <>
+      <GeneralForm
+      logo={logo}
+      forgotPassOne={forgotPassOne}
+      forgotPassTwo={forgotPassTwo}
+      forgotPassThree={forgotPassThree}
+      forgotPassFour={forgotPassFour}
+      warningIcon={warningIcon}
+      statusBar={statusBar}
+      avatar={avatar}
+      arrowForward={arrowForward}
+      coffeImg={coffeImg}
+      plus={plus}
+      cups={cups}
+      wheels={wheels}
+      minus={minus}
+      smallCup={smallCup}
+      mediumCup={mediumCup}
+      largeCup={largeCup}
+      delBtn={delBtn}
+      />
+    </>
+  )
+}
+
+export default App

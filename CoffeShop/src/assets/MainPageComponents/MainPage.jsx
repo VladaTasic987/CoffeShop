@@ -1,0 +1,408 @@
+import { useState } from "react"
+import { MainHeader } from "./MainHeader";
+import { MainFooter } from "./MainFooter";
+import { ShortEspresso } from "./ShortEspresso";
+import { LongEspresso } from "./LongEspresso";
+import { ShortEspressoMilk } from "./ShortEspressoMilk";
+import { LongEspressoMilk } from "./LongEspressoMilk";
+import { Americano } from "./Americano";
+
+
+
+export function MainPage({statusBar, avatar, logo, arrowForward, coffeImg, plus, cups, wheels, minus, id, smallCup, mediumCup, largeCup, delBtn}) {
+
+const[shortEspressoVisible, setShortEspressoVisible] = useState("false");
+const[longEspressoVisible, setLongEspressoVisible] = useState("false");
+const[shortEspressoMilkVisible, setShortEspressoMilkVisible] = useState("false");
+const[longEspressoMilkVisible, setLongEspressoMilkVisible] = useState("false");
+const[americanoVisible, setAmericanoVisible] = useState("false");
+
+const [orederId, setOrderId] = useState(1);
+const [order, setOrder] = useState([]);
+
+// Short Espresso Logic
+
+const [cupSizeShortEspresso, setCupSizeShortEspresso] = useState("");
+const[shortEspQuantity, setShortEspQuantity] = useState(1);
+const[selectTypeCoffeShortEspresso, setSelectTypeCoffeShortEspresso] = useState("brazil-zrno");
+const[selectTypeMilkShortEspresso, setSelectTypeMilkShortEspresso] = useState("obicno-mleko")
+const[shortEspressoItem, setShortEspressoItem] = useState("Espresso kratki");
+
+function getShortEspresso() {
+    setOrderId((prevId)=> prevId + 1)
+    setShortEspressoItem(setShortEspressoItem)
+    setOrder([...order, 
+        {id: orederId, 
+        productName: shortEspressoItem,
+        productPrice: 120, 
+        quantity: shortEspQuantity, 
+        cupSize: cupSizeShortEspresso, 
+        coffeType: selectTypeCoffeShortEspresso, milkType: selectTypeMilkShortEspresso 
+    }])
+}
+
+function getCupSizeShortEspresso(cupSizeShortEspresso) {
+    setCupSizeShortEspresso(cupSizeShortEspresso)
+}
+
+function getShortEspressoQuantityPlus() {
+    setShortEspQuantity(shortEspQuantity + 1)
+}
+
+function getShortEspressoQuantityMinus() {
+    setShortEspQuantity(shortEspQuantity - 1)
+}
+
+function getSelectedTypeCoffeShortEspresso(e) {
+    setSelectTypeCoffeShortEspresso(e.target.value)
+}
+
+function getSelectedTypeMilkShortEspresso(e) {
+    setSelectTypeMilkShortEspresso(e.target.value);
+}
+
+// Long Espresso Logic
+
+const [cupSizeLongEspresso, setCupSizeLongEspresso] = useState("");
+const[longEspQuantity, setLongEspQuantity] = useState(1);
+const[selectTypeCoffeLongEspresso, setSelectTypeCoffeLongEspresso] = useState("brazil-zrno");
+const[selectTypeMilkLongEspresso, setSelectTypeMilkLongEspresso] = useState("obicno-mleko")
+const[longEspressoItem, setLongEspressoItem] = useState("Espresso dugi");
+
+function getLongEspresso() {
+    setOrderId((prevId)=> prevId + 1)
+    setLongEspressoItem(setLongEspressoItem)
+    setOrder([...order, 
+        {id: orederId, 
+        productName: longEspressoItem,
+        productPrice: 130, 
+        quantity: longEspQuantity, 
+        cupSize: cupSizeLongEspresso, 
+        coffeType: selectTypeCoffeLongEspresso, milkType: selectTypeMilkLongEspresso }
+    ])
+}
+
+function getCupSizeLongEspresso(cupSizeLongEspresso) {
+    setCupSizeLongEspresso(cupSizeLongEspresso)
+}
+
+function getLongEspressoQuantityPlus() {
+    setLongEspQuantity(longEspQuantity + 1)
+}
+
+function getLongEspressoQuantityMinus() {
+    setLongEspQuantity(longEspQuantity - 1)
+}
+
+function getSelectedTypeCoffeLongEspresso(e) {
+    setSelectTypeCoffeLongEspresso(e.target.value)
+}
+
+function getSelectedTypeMilkLongEspresso(e) {
+    setSelectTypeMilkLongEspresso(e.target.value);
+}
+
+// Short Espresso with Milk Logic
+
+const [cupSizeShortEspressoMilk, setCupSizeShortEspressoMilk] = useState("");
+const[shortEspMilkQuantity, setShortEspMilkQuantity] = useState(1);
+const[selectTypeCoffeShortEspressoMilk, setSelectTypeCoffeShortEspressoMilk] = useState("brazil-zrno");
+const[selectTypeMilkShortEspressoMilk, setSelectTypeMilkShortEspressoMilk] = useState("obicno-mleko")
+const[shortEspressoMilkItem, setShortEspressoMilkItem] = useState("Espresso kratki sa mlekom");
+
+function getShortEspressoMilk() {
+    setOrderId((prevId) => prevId + 1)
+    setShortEspressoMilkItem(setShortEspressoMilkItem)
+    setOrder([...order, 
+        {id: orederId, 
+        productName: shortEspressoMilkItem,
+        productPrice: 140, 
+        quantity: shortEspMilkQuantity, 
+        cupSize: cupSizeShortEspressoMilk, 
+        coffeType: selectTypeCoffeShortEspressoMilk, 
+        milkType: selectTypeMilkShortEspressoMilk 
+    }])
+}
+
+function getCupSizeShortEspressoMilk(cupSizeShortEspressoMilk) {
+    setCupSizeShortEspressoMilk(cupSizeShortEspressoMilk)
+}
+
+function getShortEspressoMilkQuantityPlus() {
+    setShortEspMilkQuantity(shortEspMilkQuantity + 1)
+}
+
+function getShortEspressoMilkQuantityMinus() {
+    setShortEspMilkQuantity(shortEspMilkQuantity - 1)
+}
+
+function getSelectedTypeCoffeShortEspressoMilk(e) {
+    setSelectTypeCoffeShortEspressoMilk(e.target.value)
+}
+
+function getSelectedTypeMilkShortEspressoMilk(e) {
+    setSelectTypeMilkShortEspressoMilk(e.target.value);
+}
+
+// Long Espresso with Milk Logic
+
+const [cupSizeLongEspressoMilk, setCupSizeLongEspressoMilk] = useState("");
+const[longEspMilkQuantity, setLongEspMilkQuantity] = useState(1);
+const[selectTypeCoffeLongEspressoMilk, setSelectTypeCoffeLongEspressoMilk] = useState("brazil-zrno");
+const[selectTypeMilkLongEspressoMilk, setSelectTypeMilkLongEspressoMilk] = useState("obicno-mleko")
+const[longEspressoMilkItem, setLongEspressoMilkItem] = useState("Espresso dugi sa mlekom");
+
+function getLongEspressoMilk() {
+    setOrderId((prevId)=>prevId + 1)
+    setLongEspressoMilkItem(setLongEspressoMilkItem)
+    setOrder([...order, 
+        {id: orederId, 
+        productName: longEspressoMilkItem,
+        productPrice: 150, 
+        quantity: longEspMilkQuantity, 
+        cupSize: cupSizeLongEspressoMilk, 
+        coffeType: selectTypeCoffeLongEspressoMilk, milkType: selectTypeMilkLongEspressoMilk }
+    ])
+}
+
+function getCupSizeLongEspressoMilk(cupSizeLongEspressoMilk) {
+    setCupSizeLongEspressoMilk(cupSizeLongEspressoMilk)
+}
+
+function getLongEspressoMilkQuantityPlus() {
+    setLongEspMilkQuantity(longEspMilkQuantity + 1)
+}
+
+function getLongEspressoMilkQuantityMinus() {
+    setLongEspMilkQuantity(longEspMilkQuantity - 1)
+}
+
+function getSelectedTypeCoffeLongEspressoMilk(event) {
+    setSelectTypeCoffeLongEspressoMilk(event.target.value)
+}
+
+function getSelectedTypeMilkLongEspressoMilk(e) {
+    setSelectTypeMilkLongEspressoMilk(e.target.value);
+}
+
+
+// Americano Logic
+
+
+const [cupSizeAmericano, setCupSizeAmericano] = useState("");
+const[americanoQuantity, setAmericanoQuantity] = useState(1);
+const[selectTypeCoffeAmericano, setSelectTypeCoffeAmericano] = useState("brazil-zrno");
+const[selectTypeMilkAmericano, setSelectTypeMilkAmericano] = useState("obicno-mleko")
+const[americanoItem, setAmericanoItem] = useState("Americano");
+
+function getAmericano() {
+    setOrderId((prevId)=>prevId + 1)
+    setAmericanoItem(setAmericanoItem)
+    setOrder([...order, 
+        {id: orederId, 
+        productName: americanoItem,
+        productPrice: 150, 
+        quantity: americanoQuantity, 
+        cupSize: cupSizeAmericano, 
+        coffeType: selectTypeCoffeAmericano, milkType: selectTypeMilkAmericano 
+    }])
+}
+
+function getCupSizeAmericano(cupSizeAmericano) {
+    setCupSizeAmericano(cupSizeAmericano)
+}
+
+function getAmericanoQuantityPlus() {
+    setAmericanoQuantity(americanoQuantity + 1)
+}
+
+function getAmericanoQuantityMinus() {
+    setAmericanoQuantity(americanoQuantity - 1)
+}
+
+function getSelectedTypeCoffeAmericano(e) {
+    setSelectTypeCoffeAmericano(e.target.value)
+}
+
+function getSelectedTypeMilkAmericano(e) {
+    setSelectTypeMilkAmericano(e.target.value);
+}
+
+// rest
+
+function handleDeleteOrder(id) {
+    setOrder(order.filter((oneOrder)=> oneOrder.id !== id))
+}
+
+const totalOrder = order.reduce((acc, num)=> acc + num.productPrice
+,0)
+
+
+
+return(
+
+        
+<div className="main-page">
+
+<MainHeader
+statusBar={statusBar}
+logo={logo}
+avatar={avatar}
+/>
+
+<div className="main-middle">
+
+    <div className="middle-slide">
+        
+        <ShortEspresso
+        coffeImg={coffeImg}
+        plus={plus}
+        cups={cups}
+        wheels={wheels}
+        minus={minus}
+        smallCup={smallCup}
+        mediumCup={mediumCup}
+        largeCup={largeCup}
+
+        id={id}
+        shortEspressoVisible={shortEspressoVisible}
+        setShortEspressoVisible={setShortEspressoVisible}
+        getShortEspresso={getShortEspresso}
+        getCupSizeShortEspresso={getCupSizeShortEspresso}
+        shortEspQuantity={shortEspQuantity}
+        getShortEspressoQuantityPlus={getShortEspressoQuantityPlus}
+        getShortEspressoQuantityMinus={getShortEspressoQuantityMinus}
+        selectTypeCoffeShortEspresso={selectTypeCoffeShortEspresso}
+        getSelectedTypeCoffeShortEspresso={getSelectedTypeCoffeShortEspresso}
+        selectTypeMilkShortEspresso={selectTypeMilkShortEspresso}
+        getSelectedTypeMilkShortEspresso={getSelectedTypeMilkShortEspresso}
+        
+        />
+
+        <div id="separator"></div>
+
+        <LongEspresso
+        coffeImg={coffeImg}
+        plus={plus}
+        cups={cups}
+        wheels={wheels}
+        minus={minus}
+        smallCup={smallCup}
+        mediumCup={mediumCup}
+        largeCup={largeCup}
+
+        id={id}
+        longEspressoVisible={longEspressoVisible}
+        setLongEspressoVisible={setLongEspressoVisible}
+        getLongEspresso={getLongEspresso}
+        getCupSizeLongEspresso={getCupSizeLongEspresso}
+        getLongEspressoQuantityPlus={getLongEspressoQuantityPlus}
+        getLongEspressoQuantityMinus={getLongEspressoQuantityMinus}
+        longEspQuantity={longEspQuantity}
+        selectTypeCoffeLongEspresso={selectTypeCoffeLongEspresso}
+        getSelectedTypeCoffeLongEspresso={getSelectedTypeCoffeLongEspresso}
+        selectTypeMilkLongEspresso={selectTypeMilkLongEspresso}
+        getSelectedTypeMilkLongEspresso={getSelectedTypeMilkLongEspresso}
+        />
+
+        <div id="separator"></div>
+
+        <ShortEspressoMilk
+        coffeImg={coffeImg}
+        plus={plus}
+        cups={cups}
+        wheels={wheels}
+        minus={minus}
+        smallCup={smallCup}
+        mediumCup={mediumCup}
+        largeCup={largeCup}
+
+        id={id}
+        shortEspressoMilkVisible={shortEspressoMilkVisible}
+        setShortEspressoMilkVisible={setShortEspressoMilkVisible}
+        getShortEspressoMilk={getShortEspressoMilk}
+        getCupSizeShortEspressoMilk={getCupSizeShortEspressoMilk}
+        getShortEspressoMilkQuantityPlus={getShortEspressoMilkQuantityPlus}
+        getShortEspressoMilkQuantityMinus={getShortEspressoMilkQuantityMinus}
+        shortEspMilkQuantity={shortEspMilkQuantity}
+        selectTypeCoffeShortEspressoMilk={selectTypeCoffeShortEspressoMilk}
+        getSelectedTypeCoffeShortEspressoMilk={getSelectedTypeCoffeShortEspressoMilk}
+        selectTypeMilkShortEspressoMilk={selectTypeMilkShortEspressoMilk}
+        getSelectedTypeMilkShortEspressoMilk={getSelectedTypeMilkShortEspressoMilk}
+        />
+
+        <div id="separator"></div>
+
+        <LongEspressoMilk
+        coffeImg={coffeImg}
+        plus={plus}
+        cups={cups}
+        wheels={wheels}
+        minus={minus}
+        smallCup={smallCup}
+        mediumCup={mediumCup}
+        largeCup={largeCup}
+
+        id={id}
+        longEspressoMilkVisible={longEspressoMilkVisible}
+        setLongEspressoMilkVisible={setLongEspressoMilkVisible}
+        getLongEspressoMilk={getLongEspressoMilk}
+        getCupSizeLongEspressoMilk={getCupSizeLongEspressoMilk}
+        getLongEspressoMilkQuantityPlus={getLongEspressoMilkQuantityPlus}
+        getLongEspressoMilkQuantityMinus={getLongEspressoMilkQuantityMinus}
+        longEspMilkQuantity={longEspMilkQuantity}
+        getSelectedTypeCoffeLongEspressoMilk={getSelectedTypeCoffeLongEspressoMilk}
+        selectTypeCoffeLongEspressoMilk={selectTypeCoffeLongEspressoMilk}
+        getSelectedTypeMilkLongEspressoMilk={getSelectedTypeMilkLongEspressoMilk}
+        selectTypeMilkLongEspressoMilk={selectTypeMilkLongEspressoMilk}
+        />
+
+        <div id="separator"></div>
+
+        <Americano
+        coffeImg={coffeImg}
+        plus={plus}
+        cups={cups}
+        wheels={wheels}
+        minus={minus}
+        smallCup={smallCup}
+        mediumCup={mediumCup}
+        largeCup={largeCup}
+        
+        id={id}
+        americanoVisible={americanoVisible}
+        setAmericanoVisible={setAmericanoVisible}
+        getAmericano={getAmericano}
+        getCupSizeAmericano={getCupSizeAmericano}
+        getAmericanoQuantityPlus={getAmericanoQuantityPlus}
+        getAmericanoQuantityMinus={getAmericanoQuantityMinus}
+        americanoQuantity={americanoQuantity}
+        getSelectedTypeCoffeAmericano={getSelectedTypeCoffeAmericano}
+        selectTypeCoffeAmericano={selectTypeCoffeAmericano}
+        getSelectedTypeMilkAmericano={getSelectedTypeMilkAmericano}
+        selectTypeMilkAmericano={selectTypeMilkAmericano}
+        />
+
+    </div>
+
+</div>
+
+    <MainFooter 
+    arrowForward={arrowForward}
+    delBtn={delBtn}
+    
+    order={order}
+    handleDeleteOrder={handleDeleteOrder}
+    totalOrder={totalOrder}
+    
+    />
+
+        
+</div>
+
+        
+
+        
+
+)
+}
