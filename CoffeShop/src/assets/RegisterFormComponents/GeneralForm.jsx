@@ -6,6 +6,7 @@ import { ForgotPasswordThree } from "./ForgotPasswordThree"
 import { ForgotPasswordFour } from "./ForgotPasswordFour"
 import { RegisterSuccessful } from "./RegisterSuccessful"
 import { MainPage } from "../MainPageComponents/MainPage"
+import { LoyaltyProgram } from "../UserProfile/LoyaltyProgram"
 
 import { useState } from "react"
 import { useId } from "react";
@@ -13,7 +14,7 @@ import { useId } from "react";
 
 
 
-export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn}) {
+export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack}) {
 
 const[idReg, setIdReg] = useState(6);
 const[name, setName] = useState("");
@@ -193,6 +194,15 @@ delBtn={delBtn}
 id={id}
 />
 
+
+<LoyaltyProgram
+loyaltyAvatar={loyaltyAvatar}
+loyaltyCup={loyaltyCup}
+loyaltyEmpty={loyaltyEmpty}
+loyaltyFree={loyaltyFree}
+statusBar={statusBar}
+arrowBack={arrowBack}
+/>
 
 </>
 

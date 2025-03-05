@@ -21,6 +21,11 @@ import smallCup from './assets/Images/smallCup.png'
 import mediumCup from './assets/Images/mediumCup.png'
 import largeCup from './assets/Images/largeCup.png'
 import delBtn from './assets/Images/delBtn.png'
+import loyaltyAvatar from './assets/Images/loyaltyAvatar.png'
+import loyaltyCup from './assets/Images/loyaltyCup.png'
+import loyaltyEmpty from './assets/Images/loyaltyEmpty.png'
+import loyaltyFree from './assets/Images/loyaltyFree.png'
+import arrowBack from './assets/Images/arrowBack.png'
 
 
 
@@ -48,6 +53,11 @@ function App() {
       mediumCup={mediumCup}
       largeCup={largeCup}
       delBtn={delBtn}
+      loyaltyAvatar={loyaltyAvatar}
+      loyaltyCup={loyaltyCup}
+      loyaltyEmpty={loyaltyEmpty}
+      loyaltyFree={loyaltyFree}
+      arrowBack={arrowBack}
       />
     </>
   )
