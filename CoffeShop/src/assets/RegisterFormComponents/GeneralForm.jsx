@@ -16,21 +16,20 @@ import { useId } from "react";
 
 export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack}) {
 
-const[idReg, setIdReg] = useState(6);
+const[idReg, setIdReg] = useState(3);
 const[name, setName] = useState("");
 const[email, setEmail] = useState("");
 const[userPassword, setUserPassword] = useState("")
 const[confirmUserPassword, setConfirmUserPassword] = useState("");
 const[page, setPage] = useState("SubmitForm");
-const[userData, setUserData] = useState([
-    {id: 1, name: "Vladimir Tasic", email: "tasa@gmail.com",password: "12345678"},
-    {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344"},
-    {id: 3, name: "Aleksa Jurcic", email: "aleksa@gmail.com",password: "12312312"},
-    {id: 4, name: "Aleksandra Mircic", email: "aleksandra@gmail.com",password: "87654321"},
-    {id: 5, name: "Matija Knezevic", email: "matija@gmail.com",password: "87654321"}
-]);
-const id = useId();
+const [order, setOrder] = useState([]);
 
+const[userData, setUserData] = useState([
+    {id: 1, name: "Vladimir Tasic", email: "vlada@gmail.com",password: "12345678", loggedIn: false},
+    {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: false},
+]);
+
+const id = useId();
 
 function getUserName(e) {
     setName(e.target.value)
@@ -59,7 +58,8 @@ function getUserData() {
         name: name, 
         email: email, 
         password: userPassword,
-        pageName: page,    
+        pageName: page,
+        loggedIn: false,    
     }])
 
     setName("");
@@ -73,16 +73,28 @@ function changePage(pageName) {
 }
 
 const checkExistingEmail = (email) => {
-    return userData.some((data)=> email === data.email)
+    if(userData.some((data)=> email === data.email)) {
+        return true
+    }
 }
-
 
 const checkUserCredentialsLogin = (email, userPassword) => {
     const user = userData.find((user)=> user.email === email)
-    if(user && user.password === userPassword) 
+    if(user && user.password === userPassword) {
+    user.loggedIn = true;
     return true
+    }     
     else return false      
 }
+
+function newRegisterLogin() {
+    userData.map((user)=> {
+        if(user.id === userData.length) {
+            user.loggedIn = true;
+        }
+    })
+}
+
 
 function clearInputs() {
     setName("");
@@ -90,6 +102,8 @@ function clearInputs() {
     setUserPassword("");
     setConfirmUserPassword("");
 }
+
+const getOrderTotal = order.reduce((acc, order) => acc + order.quantity, 0);
 
 
 
@@ -173,10 +187,11 @@ forgotPassFour={forgotPassFour}
 { page == "RegistrationSuccessful" ? <RegisterSuccessful
 logo={logo}
 changePage={changePage}
+newRegisterLogin={newRegisterLogin}
 /> : null}
 
 
-<MainPage
+{ page == "Main" ? <MainPage
 statusBar={statusBar}
 avatar={avatar}
 logo={logo}
@@ -192,17 +207,25 @@ largeCup={largeCup}
 delBtn={delBtn}
 
 id={id}
-/>
+order={order}
+setOrder={setOrder}
+changePage={changePage}
+/> : page == "SubmitForm"}
 
 
-<LoyaltyProgram
+{ page == "Profile" ? <LoyaltyProgram
 loyaltyAvatar={loyaltyAvatar}
 loyaltyCup={loyaltyCup}
 loyaltyEmpty={loyaltyEmpty}
 loyaltyFree={loyaltyFree}
 statusBar={statusBar}
 arrowBack={arrowBack}
-/>
+
+userData={userData}
+order={order}
+changePage={changePage}
+getOrderTotal={getOrderTotal}
+/> : null}
 
 </>
 

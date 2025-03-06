@@ -1005,6 +1005,7 @@ flex-direction: column;
   margin-right: 10px;
 }
 
+
 .main-page .main-header .header-user {
   width: 389px;
   height: 61px;
@@ -1025,7 +1026,20 @@ flex-direction: column;
 .main-page .main-header .header-user .avatar {
   width: 32px;
   height: 32px;
-  margin-right: 10px;
+}
+
+.main-page .main-header .header-user button {
+
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
 }
 
 /* MainPage.jsx */

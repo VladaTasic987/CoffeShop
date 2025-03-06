@@ -9,7 +9,7 @@ import { Americano } from "./Americano";
 
 
 
-export function MainPage({statusBar, avatar, logo, arrowForward, coffeImg, plus, cups, wheels, minus, id, smallCup, mediumCup, largeCup, delBtn}) {
+export function MainPage({statusBar, avatar, logo, arrowForward, coffeImg, plus, cups, wheels, minus, id, smallCup, mediumCup, largeCup, delBtn, order, setOrder, changePage}) {
 
 const[shortEspressoVisible, setShortEspressoVisible] = useState("false");
 const[longEspressoVisible, setLongEspressoVisible] = useState("false");
@@ -18,7 +18,7 @@ const[longEspressoMilkVisible, setLongEspressoMilkVisible] = useState("false");
 const[americanoVisible, setAmericanoVisible] = useState("false");
 
 const [orederId, setOrderId] = useState(1);
-const [order, setOrder] = useState([]);
+// const [order, setOrder] = useState([]);
 
 // Short Espresso Logic
 
@@ -248,6 +248,8 @@ return(
 statusBar={statusBar}
 logo={logo}
 avatar={avatar}
+
+changePage={changePage}
 />
 
 <div className="main-middle">

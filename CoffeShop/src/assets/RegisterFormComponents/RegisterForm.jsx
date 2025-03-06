@@ -3,8 +3,6 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
 
 
     const isButtonDisabledRegister = confirmUserPassword == userPassword && userPassword.length >= 8 && !checkExistingEmail(email) && email.includes("@") && email.includes(".com");
-    
-
 
     return (
 

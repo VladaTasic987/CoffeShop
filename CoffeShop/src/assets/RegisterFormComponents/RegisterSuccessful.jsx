@@ -1,6 +1,6 @@
 
 
-export function RegisterSuccessful({logo, changePage}) {
+export function RegisterSuccessful({logo, changePage, newRegisterLogin}) {
 
 
 
@@ -21,7 +21,11 @@ export function RegisterSuccessful({logo, changePage}) {
             </div>
 
             <button
-            onClick={()=>changePage("Main")}
+            onClick={()=>
+                {changePage("Main")
+                newRegisterLogin()       
+
+                }}
             >Idite na pocetnu stranicu</button>
 
         </div>

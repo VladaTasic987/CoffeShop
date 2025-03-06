@@ -1,6 +1,8 @@
 
 
-export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack}) {
+export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack, userData, order, changePage, getOrderTotal}) {
+
+
 
 
 
@@ -16,7 +18,10 @@ return (
         </div>
 
         <div className="loyalty-header">
-            <button className="back">
+            <button 
+            className="back"
+            onClick={()=>changePage("Main")}
+            >
                 <img src={arrowBack} alt="back" /></button>
             <button className="log-out">Log out</button>
             
@@ -24,8 +29,12 @@ return (
 
         <div className="loyalty-profile">
             <img src={loyaltyAvatar} alt="avatar" />
-            <h4>Anja Pavicevic</h4>
-            <p>anja04.p@gmail.com</p>
+            <h4>{userData.map((user)=> (
+                user.loggedIn ? user.name : null
+            ))}</h4>
+            <p>{userData.map((user)=> (
+                user.loggedIn ? user.email : null
+            ))}</p>
         </div>
 
         <div className="loyalty-promo">
@@ -40,20 +49,20 @@ return (
 
         <div className="loyalty-first-row">
 
-            <img src={loyaltyCup} alt="cup" />
-            <img src={loyaltyCup} alt="cup" />
-            <img src={loyaltyCup} alt="cup" />
-            <img src={loyaltyCup} alt="cup" />
-            <img src={loyaltyCup} alt="cup" />
+            <img src={getOrderTotal == 0 ? loyaltyEmpty : loyaltyCup} alt="cup" />
+            <img src={getOrderTotal < 2 ? loyaltyEmpty : loyaltyCup} alt="cup" />
+            <img src={getOrderTotal < 3 ? loyaltyEmpty : loyaltyCup} alt="cup" />
+            <img src={getOrderTotal < 4 ? loyaltyEmpty : loyaltyCup} alt="cup" />
+            <img src={getOrderTotal < 5 ? loyaltyEmpty : loyaltyCup} alt="cup" />
 
         </div>
 
         <div className="loyalty-second-row">
 
-            <img src={loyaltyEmpty} alt="empty" />
-            <img src={loyaltyEmpty} alt="empty" />
-            <img src={loyaltyEmpty} alt="empty" />
-            <img src={loyaltyEmpty} alt="empty" />
+            <img src={getOrderTotal < 6 ? loyaltyEmpty : loyaltyCup} alt="empty" />
+            <img src={getOrderTotal < 7 ? loyaltyEmpty : loyaltyCup} alt="empty" />
+            <img src={getOrderTotal < 8 ? loyaltyEmpty : loyaltyCup} alt="empty" />
+            <img src={getOrderTotal < 9 ? loyaltyEmpty : loyaltyCup} alt="empty" />
             <img src={loyaltyFree} alt="free" />
 
         </div>

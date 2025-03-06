@@ -1,6 +1,6 @@
 
 
-export function MainHeader({statusBar, logo, avatar}) {
+export function MainHeader({statusBar, logo, avatar, changePage}) {
 
 
     return (
@@ -16,11 +16,18 @@ export function MainHeader({statusBar, logo, avatar}) {
                 src={logo} 
                 alt="logo" 
                 className="logo"/>
+                
+                <button
+                onClick={()=>changePage("Profile")}
+                >
+
                 <img 
                 src={avatar} 
                 alt="avatar"
                 className="avatar"
                 />
+
+                </button>
             </div>
 
         </div>

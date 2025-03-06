@@ -35,7 +35,7 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           <div className="login-password">
           <label htmlFor="password">Lozinka</label>
           <input 
-          type="text" 
+          type="password" 
           id="password"
           value={userPassword}
           onChange={getUserPassword}
@@ -68,7 +68,8 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           className="register-btn"
           onClick={()=>{
           changePage("RegisterForm")
-          clearInputs()}}
+          clearInputs()  
+        }}
           >Registruj se</button></p>
           </div>  
            
