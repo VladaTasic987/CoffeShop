@@ -1,8 +1,19 @@
 
 export function RegisterForm({logo, name, email, userPassword, getUserName, getUserEmail, getUserPassword, getUserData, changePage, warningIcon,checkExistingEmail, getConfirmPassword, confirmUserPassword, id, clearInputs}) {
 
+    const nameRegex = /^[^~!@#$%^&*()_+=\-{[}\]:;'",<.>/?]+$/;
+    const checkName = nameRegex.test(name);
 
-    const isButtonDisabledRegister = confirmUserPassword == userPassword && userPassword.length >= 8 && !checkExistingEmail(email) && email.includes("@") && email.includes(".com");
+    const isButtonDisabledRegister = confirmUserPassword == userPassword && userPassword.length >= 8 && !checkExistingEmail(email) && 
+    email.includes("@") && 
+    email.includes(".com") && 
+    name.length > 2 && 
+    name.length < 50 && 
+    checkName;
+
+    
+
+    
 
     return (
 
