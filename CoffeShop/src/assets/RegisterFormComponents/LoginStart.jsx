@@ -1,9 +1,10 @@
 
 export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs}) {
-
   
   const validateLogin = checkUserCredentialsLogin(email, userPassword);
 
+  
+  
   
 
      return (
@@ -31,6 +32,11 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           placeholder="Unesite Email adresu"
           />
           </div>
+
+          { (!checkUserCredentialsLogin(email, userPassword) && email) ?<div className="login-pass-popup">
+            <img src={warningIcon} alt="" />
+            <p>Uneli ste pogrešan email</p>
+          </div> : <p id="replacement">Replacement invincible text</p>}
           
           <div className="login-password">
           <label htmlFor="password">Lozinka</label>
@@ -43,9 +49,9 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           />
           </div>
 
-          {(!validateLogin && userPassword) ?<div className="login-pass-popup">
+          {(!checkUserCredentialsLogin(email, userPassword) && userPassword) ?<div className="login-pass-popup">
             <img src={warningIcon} alt="" />
-            <p>Pogrešan Email ili Lozinka pokušajte ponovo</p>
+            <p>Uneli ste pogrešnu lozinku</p>
           </div> : <p id="replacement">Replacement invincible text</p>}
 
           <button 
@@ -61,6 +67,8 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           disabled = {!validateLogin}
           onClick={()=>changePage("Main")}
           >Prijavi se</button>
+
+          
 
           <div className="login-bottom">
           <p>Još uvek nemate kreiran nalog 
