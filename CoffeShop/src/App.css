@@ -570,6 +570,31 @@ color: #474747;
   padding: 0;
 }
 
+#replacementName {
+  margin: 0px 0px 0px 0px;
+  height: 10px;
+  position: absolute;
+  top: 390px;
+}
+
+#name-popup {
+  height: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 390px;
+}
+
+#name-popup .paragraph{
+  color: red;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 12px;
+  margin-left: 5px;  
+}
+
+
 /* ForgotPassword.jsx styles */
 
 #pass-one-background {

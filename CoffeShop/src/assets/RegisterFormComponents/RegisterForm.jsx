@@ -45,6 +45,12 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         placeholder="Unesite Ime i Prezime"
         onChange={getUserName}
         />
+
+        { (name.length < 2 && name) ? <div 
+        id="name-popup">
+            <img src={warningIcon} alt="warning-icon" />
+            <p className="paragraph">Mora da sadrži od 2 do 50 karaktera</p>
+        </div> : <p id="replacementName"></p>}
         
         </div>
 
@@ -76,7 +82,7 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         onChange={getUserPassword}
         />
 
-        { userPassword && userPassword.length < 8 ? <div className="password-popup">
+        { userPassword.length < 8 && userPassword? <div className="password-popup">
             <img src={warningIcon} alt="warning-icon" />
             <p>Mora da sadrži minimum 8 karaktera</p>
         </div> : <p id="replacementPass">Replacement invincible text</p>}
@@ -96,7 +102,7 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         />
         </div>
 
-        {confirmUserPassword !== userPassword ? <div className="confirm-pass-popup">
+        {confirmUserPassword !== userPassword && confirmUserPassword ? <div className="confirm-pass-popup">
             <img src={warningIcon} alt="warning-icon" />
             <p>Lozinke se ne podudaraju. Pokušajte ponovo</p>
         </div> : <p id="replacement">Replacement invincible text</p>}

@@ -79,8 +79,6 @@ const checkExistingEmail = (email) => {
     }
 }
 
-console.log(checkExistingEmail(email))
-
 const checkUserCredentialsLogin = (email, userPassword) => {
     const user = userData.find((user)=> user.email === email)
     if(user && user.password === userPassword) {
