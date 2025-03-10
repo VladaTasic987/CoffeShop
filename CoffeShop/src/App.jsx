@@ -26,6 +26,9 @@ import loyaltyCup from './assets/Images/loyaltyCup.png'
 import loyaltyEmpty from './assets/Images/loyaltyEmpty.png'
 import loyaltyFree from './assets/Images/loyaltyFree.png'
 import arrowBack from './assets/Images/arrowBack.png'
+import orderOne from './assets/Images/orderOne.png'
+import clock from './assets/Images/clock.png'
+import mobileHand from './assets/Images/mobileHand.png'
 
 
 
@@ -58,6 +61,9 @@ function App() {
       loyaltyEmpty={loyaltyEmpty}
       loyaltyFree={loyaltyFree}
       arrowBack={arrowBack}
+      orderOne={orderOne}
+      clock={clock}
+      mobileHand={mobileHand}
       />
     </>
   )

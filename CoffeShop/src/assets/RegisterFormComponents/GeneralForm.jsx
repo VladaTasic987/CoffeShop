@@ -7,6 +7,7 @@ import { ForgotPasswordFour } from "./ForgotPasswordFour"
 import { RegisterSuccessful } from "./RegisterSuccessful"
 import { MainPage } from "../MainPageComponents/MainPage"
 import { LoyaltyProgram } from "../UserProfile/LoyaltyProgram"
+import { OrderStatus } from "../OrderStatus/OrderStatus"
 
 import { useState } from "react"
 import { useId } from "react";
@@ -14,7 +15,7 @@ import { useId } from "react";
 
 
 
-export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack}) {
+export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand}) {
 
 const[idReg, setIdReg] = useState(3);
 const[name, setName] = useState("");
@@ -28,8 +29,6 @@ const[userData, setUserData] = useState([
     {id: 1, name: "Vladimir Tasic", email: "vlada@gmail.com",password: "12345678", loggedIn: false},
     {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: false},
 ]);
-
-console.log(userData);
 
 const id = useId();
 
@@ -228,6 +227,14 @@ order={order}
 changePage={changePage}
 getOrderTotal={getOrderTotal}
 /> : null}
+
+<OrderStatus
+statusBar={statusBar}
+orderOne={orderOne}
+clock={clock}
+mobileHand={mobileHand}
+arrowBack={arrowBack}
+/>
 
 </>
 
