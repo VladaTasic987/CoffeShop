@@ -1,10 +1,23 @@
 
 
-export function ForgotPassword({logo, forgotPassOne, changePage, id, email, checkExistingEmail, getUserEmail}) {
+export function ForgotPassword({logo, forgotPassOne, changePage, id, email, checkExistingEmail, getUserEmail, statusBar, arrowBack}) {
 
 
 
     return (
+
+        <div id="pass-one-background">
+
+        <div className="pass-one-mobile">
+                <p>9:41</p>
+                <img src={statusBar} alt="status" />
+            </div>
+
+            <div className="pass-one-header">
+
+                <img src={arrowBack} alt="arrow" />
+
+            </div>
 
         <div className="forgot-pass-one">
 
@@ -40,6 +53,7 @@ export function ForgotPassword({logo, forgotPassOne, changePage, id, email, chec
             <img src={forgotPassOne} alt="" />
             </div>
 
+        </div>
         </div>
 
 )

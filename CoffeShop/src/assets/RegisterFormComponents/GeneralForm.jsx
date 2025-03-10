@@ -116,6 +116,8 @@ return(
 <LoginStart 
 logo={logo}
 warningIcon={warningIcon}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 email={email}
 userPassword={userPassword}
@@ -129,6 +131,8 @@ clearInputs={clearInputs}
 { page == "RegisterForm" ? <RegisterForm
 logo={logo}
 warningIcon={warningIcon}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 name={name}
 email={email}
@@ -151,6 +155,8 @@ clearInputs={clearInputs}
 {page == "ForgotPassOne" ? 
 <ForgotPassword
 logo={logo}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 forgotPassOne={forgotPassOne}
 changePage={changePage}
@@ -164,6 +170,8 @@ checkExistingEmail={checkExistingEmail}
 
 { page == "ForgotPassTwo" ? <ForgotPasswordTwo 
 logo={logo}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 forgotPassTwo={forgotPassTwo}
 changePage={changePage}
@@ -172,6 +180,8 @@ changePage={changePage}
 
 { page == "ForgotPassThree" ?  <ForgotPasswordThree
 logo={logo}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 forgotPassThree={forgotPassThree}
 changePage={changePage}
@@ -181,12 +191,17 @@ id={id}
 
 { page == "ForgotPassFour" ? <ForgotPasswordFour
 logo={logo}
+statusBar={statusBar}
+arrowBack={arrowBack}
 
 forgotPassFour={forgotPassFour}
 /> : null}
 
 { page == "RegistrationSuccessful" ? <RegisterSuccessful
 logo={logo}
+statusBar={statusBar}
+arrowBack={arrowBack}
+
 changePage={changePage}
 newRegisterLogin={newRegisterLogin}
 /> : null}

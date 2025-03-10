@@ -1,10 +1,21 @@
 
 
-export function RegisterSuccessful({logo, changePage, newRegisterLogin}) {
+export function RegisterSuccessful({logo, changePage, newRegisterLogin, arrowBack, statusBar}) {
 
 
 
     return (
+
+        <div id="success-background">
+
+        <div className="success-mobile">
+            <p>9:41</p>
+            <img src={statusBar} alt="status" />
+        </div>
+
+        <div className="success-header">
+            <img src={arrowBack} alt="back" />
+        </div>
 
         <div className="successful-registration">
 
@@ -28,6 +39,7 @@ export function RegisterSuccessful({logo, changePage, newRegisterLogin}) {
                 }}
             >Idite na pocetnu stranicu</button>
 
+        </div>
         </div>
 
     )

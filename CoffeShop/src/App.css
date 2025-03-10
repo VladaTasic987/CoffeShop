@@ -9,7 +9,53 @@
 
 /* LoginStart.jsx styles */
 
+.login-back-button {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login-back-button #login-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.login-back-button #login-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+.login-back-button #login-mobile img {
+  margin-right: 15px;
+}
+
+.login-back-button #login-header-back {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.login-back-button #login-header-back img {
+  height: 24px;
+  width: 24px;
+  margin-left: 15px;
+}
+
 .login-container {
+  margin-top: 60px;
   width: 340px;
   height: 585px;
   background-color: #ffffff;
@@ -187,7 +233,53 @@ color: #474747;
 /* RegisterForm.jsx styles */
 
 
+#register-background {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#register-background .register-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#register-background .register-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+#register-background .register-mobile img {
+  margin-right: 15px;
+}
+
+#register-background .register-header {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#register-background .register-header img {
+  height: 24px;
+  width: 24px;
+  margin-left: 15px;
+}
+
 .register-container {
+  margin-top: 30px;
   width: 340px;
   height: 650px;
   border-radius: 26px;
@@ -480,7 +572,53 @@ color: #474747;
 
 /* ForgotPassword.jsx styles */
 
+#pass-one-background {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pass-one-background .pass-one-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pass-one-background .pass-one-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+#pass-one-background .pass-one-mobile img {
+  margin-right: 15px;
+}
+
+#pass-one-background .pass-one-header {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#pass-one-background .pass-one-header img{
+  height: 24px;
+  width: 24px;
+  margin-left: 5px;
+}
+
 .forgot-pass-one {
+  margin-top: 60px;
   width: 340px;
   height: 585px;
   border-radius: 26px;
@@ -579,7 +717,53 @@ color: #474747;
 
 /* ForgotPasswordTwo.jsx */
 
+#pass-two-background {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pass-two-background .pass-two-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pass-two-background .pass-two-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+#pass-two-background .pass-two-mobile img {
+  margin-right: 15px;
+}
+
+#pass-two-background .pass-two-header {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#pass-two-background .pass-two-header img {
+  height: 24px;
+  width: 24px;
+  margin-left: 15px;
+}
+
 .forgotPass-two-container {
+  margin-top: 60px;
   height: 585px;
   width: 340px;
   border-radius: 26px;
@@ -699,7 +883,53 @@ color: #474747;
 
 /* ForgotPasswordThree.jsx */
 
+#pass-three-back {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#pass-three-back .pass-three-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#pass-three-back .pass-three-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+#pass-three-back .pass-three-mobile img {
+  margin-right: 15px;
+}
+
+#pass-three-back .pass-three-header {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#pass-three-back .pass-three-header img {
+  width: 24px;
+  height: 24px;
+  margin-left: 15px;
+}
+
 .forgotPassThree-container {
+margin-top: 60px;
 height: 585px;
 width: 340px;
 border-radius: 26px;
@@ -848,6 +1078,7 @@ flex-direction: column;
 /* ForgotPasswordFour.jsx */
 
 .forgotPassFour-container {
+  margin-top: 60px;
   height: 585px;
   width: 340px;
   border-radius: 26px;
@@ -917,7 +1148,54 @@ flex-direction: column;
 
 /* RegisterSuccessful.jsx */
 
+#success-background {
+  width: 390px;
+  height: 844px;
+  background: linear-gradient(to bottom, #164864, #248CC5);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+#success-background .success-mobile {
+  width: 390px;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#success-background .success-mobile p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 21px;
+  color: #ffffff;
+  margin-left: 15px;
+}
+
+#success-background .success-mobile img {
+  margin-right: 15px;
+}
+
+#success-background .success-header {
+  width: 390px;
+  height: 61px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#success-background .success-header img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+
 .successful-registration {
+  margin-top: 30px;
   width: 340px;
   height: 683.5px;
   border-radius: 26px;

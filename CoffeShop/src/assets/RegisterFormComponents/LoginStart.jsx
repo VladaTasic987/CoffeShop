@@ -1,5 +1,5 @@
 
-export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs}) {
+export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack}) {
   
   const validateLogin = checkUserCredentialsLogin(email, userPassword);
 
@@ -8,6 +8,17 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
   
 
      return (
+
+        <div className="login-back-button">
+
+        <div id="login-mobile">
+          <p>9:41</p>
+          <img src={statusBar} alt="status" />
+        </div>
+
+        <div id="login-header-back">
+        <img src={arrowBack} alt="back" />  
+        </div>  
 
         <div className="login-container">
 
@@ -82,6 +93,7 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           </div>  
            
 
+        </div>
         </div>
 
      )   

@@ -1,5 +1,5 @@
 
-export function RegisterForm({logo, name, email, userPassword, getUserName, getUserEmail, getUserPassword, getUserData, changePage, warningIcon,checkExistingEmail, getConfirmPassword, confirmUserPassword, id, clearInputs}) {
+export function RegisterForm({logo, name, email, userPassword, getUserName, getUserEmail, getUserPassword, getUserData, changePage, warningIcon,checkExistingEmail, getConfirmPassword, confirmUserPassword, id, clearInputs, statusBar, arrowBack}) {
 
     const nameRegex = /^[^~!@#$%^&*()_+=\-{[}\]:;'",<.>/?]+$/;
     const checkName = nameRegex.test(name);
@@ -16,6 +16,16 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
     
 
     return (
+        <div id="register-background">
+
+        <div className="register-mobile">
+            <p>9:41</p>
+            <img src={statusBar} alt="status" />
+        </div>
+
+        <div className="register-header">
+            <img src={arrowBack} alt="arrow" />
+        </div>
 
         <div className="register-container">
         <img src={logo} 
@@ -111,6 +121,8 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         clearInputs()    
         }}
         >Prijavite se</button></p>
+        </div>
+
         </div>
 
         </div>

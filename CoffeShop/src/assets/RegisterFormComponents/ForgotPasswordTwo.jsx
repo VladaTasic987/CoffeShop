@@ -1,11 +1,21 @@
 
 
-export function ForgotPasswordTwo({logo, forgotPassTwo, changePage}) {
+export function ForgotPasswordTwo({logo, forgotPassTwo, changePage, statusBar, arrowBack}) {
 
 
     return  (
         
-        
+        <div id="pass-two-background">
+
+        <div className="pass-two-mobile">
+            <p>9:41</p>
+            <img src={statusBar} alt="status" />
+        </div>
+
+        <div className="pass-two-header">
+            <img src={arrowBack} alt="back" />
+        </div>    
+
         <div className="forgotPass-two-container">
 
         <img src={logo} alt="" />
@@ -63,6 +73,7 @@ export function ForgotPasswordTwo({logo, forgotPassTwo, changePage}) {
 
 
 
+        </div>
         </div>
     )
 

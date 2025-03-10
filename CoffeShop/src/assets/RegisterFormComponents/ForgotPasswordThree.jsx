@@ -1,9 +1,20 @@
 
 
-export function ForgotPasswordThree({forgotPassThree, logo, changePage, id}) {
+export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, statusBar, arrowBack}) {
 
 
     return(
+
+        <div id="pass-three-back">
+
+        <div className="pass-three-mobile">
+            <p>9:41</p>
+            <img src={statusBar} alt="status" />
+        </div>
+
+        <div className="pass-three-header">
+            <img src={arrowBack} alt="back" />
+        </div>
 
         <div className="forgotPassThree-container"> 
 
@@ -49,6 +60,7 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id}) {
         <img src={forgotPassThree} alt="" />
         </div>
 
+        </div>
         </div>
 
     )
