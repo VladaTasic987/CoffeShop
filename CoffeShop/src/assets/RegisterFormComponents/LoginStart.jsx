@@ -1,5 +1,5 @@
 
-export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack}) {
+export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack, checkExistingEmail}) {
   
   const validateLogin = checkUserCredentialsLogin(email, userPassword);
 
@@ -44,7 +44,7 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           />
           </div>
 
-          { (!checkUserCredentialsLogin(email, userPassword) && email) ?<div className="login-pass-popup">
+          { (!checkExistingEmail(email) && email) ?<div className="login-pass-popup">
             <img src={warningIcon} alt="" />
             <p>Uneli ste pogrešan email</p>
           </div> : <p id="replacement">Replacement invincible text</p>}
