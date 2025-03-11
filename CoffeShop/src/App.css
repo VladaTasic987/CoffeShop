@@ -17,6 +17,7 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  
 }
 
 .login-back-button #login-mobile {
@@ -65,6 +66,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
 }
 
 .login-container .logo {
@@ -127,6 +129,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  
 }
 
 .login-password label {
@@ -146,6 +149,18 @@
   box-shadow: 0px 2px 4px 0px #aaa8a8;
   border: 0px;
   color: black;
+}
+
+#password-eye-login {
+  width: 10px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 20px;
+  top: 285px;
+  background-color: transparent;
 }
 
 .login-password input::placeholder {

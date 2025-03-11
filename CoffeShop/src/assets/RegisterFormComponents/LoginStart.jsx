@@ -1,10 +1,16 @@
+import { useState } from "react";
+
 
 export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack, checkExistingEmail}) {
   
   const validateLogin = checkUserCredentialsLogin(email, userPassword);
 
+  const[seePassword, setSeePassword] = useState(false);
   
-  
+  function togglePassword() {
+    setSeePassword(true)
+  }
+
   
 
      return (
@@ -52,13 +58,20 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           <div className="login-password">
           <label htmlFor="password">Lozinka</label>
           <input 
-          type="password" 
+          type={seePassword ? "text" : "password"} 
           id="password"
           value={userPassword}
           onChange={getUserPassword}
           placeholder="Unesite lozinku"
           />
           </div>
+
+          <button
+          onClick={(()=>togglePassword())}
+          id="password-eye-login"
+          >👁️</button>
+
+          
 
           {(!checkUserCredentialsLogin(email, userPassword) && userPassword) ?<div className="login-pass-popup">
             <img src={warningIcon} alt="" />
