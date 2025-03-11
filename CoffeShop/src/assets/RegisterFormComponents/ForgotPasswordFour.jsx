@@ -1,6 +1,6 @@
 
 
-export function ForgotPasswordFour({logo, forgotPassFour, statusBar, arrowBack}) {
+export function ForgotPasswordFour({logo, forgotPassFour, statusBar, arrowBack, changePage}) {
 
 
     return (
@@ -31,6 +31,7 @@ export function ForgotPasswordFour({logo, forgotPassFour, statusBar, arrowBack})
 
             <div className="bottom-section">
             <button
+            onClick={()=>changePage("SubmitForm")}
             >Prijavite se</button>
 
             <img src={forgotPassFour} alt="" />    

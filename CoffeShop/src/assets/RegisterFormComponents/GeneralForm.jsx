@@ -158,6 +158,7 @@ clearInputs={clearInputs}
 logo={logo}
 statusBar={statusBar}
 arrowBack={arrowBack}
+warningIcon={warningIcon}
 
 forgotPassOne={forgotPassOne}
 changePage={changePage}
@@ -183,6 +184,7 @@ changePage={changePage}
 logo={logo}
 statusBar={statusBar}
 arrowBack={arrowBack}
+warningIcon={warningIcon}
 
 forgotPassThree={forgotPassThree}
 changePage={changePage}
@@ -196,6 +198,7 @@ statusBar={statusBar}
 arrowBack={arrowBack}
 
 forgotPassFour={forgotPassFour}
+changePage={changePage}
 /> : null}
 
 { page == "RegistrationSuccessful" ? <RegisterSuccessful

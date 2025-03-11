@@ -1,6 +1,9 @@
+import { useState } from "react"
 
+export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, statusBar, arrowBack, warningIcon}) {
 
-export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, statusBar, arrowBack}) {
+    const[newEmail, setNewEmail] = useState("");
+    const[confirmEmail, setConfirmEmail] = useState("");
 
 
     return(
@@ -34,6 +37,8 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, stat
             htmlFor={`${id}-newEmail`}>Nova Lozinka</label>
             <input 
             type="text"
+            value={newEmail}
+            onChange={(e)=>setNewEmail(e.target.value)}
             id={`${id}-newEmail`}
             placeholder="Unesite novu lozinku"
             />
@@ -45,9 +50,16 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, stat
             Ponovite lozinku</label>
             <input 
             type="text"
+            value={confirmEmail}
+            onChange={(e)=>setConfirmEmail(e.target.value)}
             id={`${id}-confirmEmail`}
             placeholder="Ponovite lozinku"
             />
+
+            {newEmail !== confirmEmail && confirmEmail ? <div id="forgot-pass-three-popup">
+            <img src={warningIcon} alt="warning-icon" />
+            <p className="paragraph">Lozinke se ne poklapaju</p>
+            </div> : null} 
         </div>
         </div>
 

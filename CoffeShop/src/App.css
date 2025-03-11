@@ -711,6 +711,24 @@ color: #474747;
   color: black;
 }
 
+#forgot-pass-one-popup {
+  width: 292px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 3px;
+  margin-top: 5px;
+}
+
+#forgot-pass-one-popup p {
+  margin: 0;
+  color: red;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 12px;
+
+}
+
 .forgot-pass-one .bottom-forgot {
 
   display: flex;
@@ -1076,6 +1094,23 @@ flex-direction: column;
   line-height: 21px;
   letter-spacing: -0.32px;
   color: #7d7d7d;
+}
+
+#forgot-pass-three-popup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 292px;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+#forgot-pass-three-popup p {
+  margin: 0;
+  color: red;
+  font-family: "Montserrat", serif;
+  font-weight: 500;
+  font-size: 12px;
 }
 
 .forgotPassThree-container .bottom-section {

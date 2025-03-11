@@ -1,6 +1,6 @@
 
 
-export function ForgotPassword({logo, forgotPassOne, changePage, id, email, checkExistingEmail, getUserEmail, statusBar, arrowBack}) {
+export function ForgotPassword({logo, forgotPassOne, changePage, id, email, checkExistingEmail, getUserEmail, statusBar, arrowBack, warningIcon}) {
 
 
 
@@ -43,6 +43,11 @@ export function ForgotPassword({logo, forgotPassOne, changePage, id, email, chec
                 onChange={getUserEmail}
                 />
             </div>
+
+             {!checkExistingEmail(email) && email ? <div id="forgot-pass-one-popup">
+            <img src={warningIcon} alt="warning-icon" />
+            <p className="paragraph">Uneli ste nepostojeći email</p>
+            </div> : null}  
 
             <div className="bottom-forgot">
             <button
