@@ -29,7 +29,7 @@ export function ForgotPassword({logo, forgotPassOne, changePage, id, email, chec
 
             <h4>Zaboravili ste lozinku?</h4>
 
-            <p>Unesite svoju email adresu i mi cemo Vam poslati instrukcije za resetovanje</p>
+            <p className="paragraph">Unesite svoju email adresu i mi cemo Vam poslati instrukcije za resetovanje</p>
 
             </div>
             

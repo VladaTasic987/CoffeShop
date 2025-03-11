@@ -23,10 +23,10 @@ export function RegisterSuccessful({logo, changePage, newRegisterLogin, arrowBac
 
             <div className="middle-section">
 
-                <h4>Uspesno ste se registrovali</h4>
+                <h4>Uspešno ste se registrovali</h4>
 
                 <div className="text-container">
-                <p>Cestitamo! Uspesno ste se registrovali. Sada mozete uzivati u brzom i jednostavnom narucivanju omiljene kafe online!</p>
+                <p>Cestitamo! Uspešno ste se registrovali. Sada možete uživati u brzom i jednostavnom naručivanju omiljene kafe online!</p>
                 </div>
 
             </div>

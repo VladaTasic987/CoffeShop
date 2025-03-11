@@ -678,11 +678,16 @@ color: #474747;
   color: #164864;
 }
 
-.forgot-pass-one .upper-forgot p {
+.forgot-pass-one .upper-forgot .paragraph {
   font-family: "Montserrat", serif;
   font-weight: 500;
   font-size: 12px;
   line-height: 14px;
+  color: #248cc5;
+  width: 284px;
+  height: 28px;
+  text-align: center;
+  margin-bottom: 45px;
 }
 
 .forgot-pass-one .forgot-form {
