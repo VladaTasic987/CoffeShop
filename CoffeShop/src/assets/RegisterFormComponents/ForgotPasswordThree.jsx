@@ -5,6 +5,18 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, stat
     const[newEmail, setNewEmail] = useState("");
     const[confirmEmail, setConfirmEmail] = useState("");
 
+    const[seePassword, setSeePassword] = useState(false);
+  
+    function togglePassword() {
+    setSeePassword((prevState)=> !prevState)
+    }
+
+    const[seePasswordTwo, setSeePasswordTwo] = useState(false);
+  
+    function togglePasswordTwo() {
+    setSeePasswordTwo((prevState)=> !prevState)
+    }
+
 
     return(
 
@@ -36,7 +48,7 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, stat
             <label 
             htmlFor={`${id}-newEmail`}>Nova Lozinka</label>
             <input 
-            type="text"
+            type={seePassword ? "text" : "password"}
             value={newEmail}
             onChange={(e)=>setNewEmail(e.target.value)}
             id={`${id}-newEmail`}
@@ -44,17 +56,27 @@ export function ForgotPasswordThree({forgotPassThree, logo, changePage, id, stat
             />
         </div>
 
+        <button
+          onClick={(()=>togglePassword())}
+          id="password-eye-registerFPT"
+          >👁️</button>
+
         <div className="middle-two">
             <label 
             htmlFor={`${id}-confirmEmail`}>
             Ponovite lozinku</label>
             <input 
-            type="text"
+            type={seePasswordTwo ? "text" : "password"}
             value={confirmEmail}
             onChange={(e)=>setConfirmEmail(e.target.value)}
             id={`${id}-confirmEmail`}
             placeholder="Ponovite lozinku"
             />
+
+            <button
+            onClick={(()=>togglePasswordTwo())}
+            id="password-eye-registerFPT2"
+            >👁️</button>
 
             {newEmail !== confirmEmail && confirmEmail ? <div id="forgot-pass-three-popup">
             <img src={warningIcon} alt="warning-icon" />

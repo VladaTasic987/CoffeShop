@@ -247,13 +247,13 @@ changePage={changePage}
 getOrderTotal={getOrderTotal}
 /> : null}
 
-<OrderStatus
+{/* <OrderStatus
 statusBar={statusBar}
 orderOne={orderOne}
 clock={clock}
 mobileHand={mobileHand}
 arrowBack={arrowBack}
-/>
+/> */}
 
 </>
 

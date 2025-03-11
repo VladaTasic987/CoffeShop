@@ -161,6 +161,7 @@
   right: 20px;
   top: 285px;
   background-color: transparent;
+  border: none;
 }
 
 .login-password input::placeholder {
@@ -480,6 +481,20 @@ color: #474747;
   color: black;
 }
 
+#password-eye-registerOne {
+
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 320px;
+  right: 25px;
+  background-color: transparent;
+}
+
 .register-container .password input::placeholder{
   font-family: "Montserrat", serif;
   font-weight: 500;
@@ -534,6 +549,19 @@ color: #474747;
   box-shadow: 0px 2px 4px 0px #aaa8a8;
   border: 0px;
   color: black;
+}
+
+#password-eye-registerTwo {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 410px;
+  right: 25px;
+  background-color: transparent;
 }
 
 .register-container .confirm-password input::placeholder {
@@ -1004,6 +1032,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 flex-direction: column;
+position: relative;
 }
 
 .forgotPassThree-container .upper-section img {
@@ -1070,6 +1099,20 @@ flex-direction: column;
   color: black;
 }
 
+
+#password-eye-registerFPT {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 235px;
+  right: 25px;
+  background-color: transparent;
+}
+
 .forgotPassThree-container .middle-section .middle-one input::placeholder {
   font-family: "Montserrat", serif;
   font-weight: 500;
@@ -1106,6 +1149,19 @@ flex-direction: column;
   color: black;
 }
 
+#password-eye-registerFPT2 {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  position: absolute;
+  top: 327px;
+  right: 25px;
+  background-color: transparent;
+}
+
 .forgotPassThree-container .middle-section .middle-two input::placeholder {
   font-family: "Montserrat", serif;
   font-weight: 500;
@@ -1122,7 +1178,8 @@ flex-direction: column;
   align-items: center;
   width: 292px;
   gap: 5px;
-  margin-top: 5px;
+  position: absolute;
+  top: 364px;
 }
 
 #forgot-pass-three-popup p {

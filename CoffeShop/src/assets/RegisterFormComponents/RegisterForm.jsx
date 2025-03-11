@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 export function RegisterForm({logo, name, email, userPassword, getUserName, getUserEmail, getUserPassword, getUserData, changePage, warningIcon,checkExistingEmail, getConfirmPassword, confirmUserPassword, id, clearInputs, statusBar, arrowBack}) {
 
@@ -11,6 +12,17 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
     name.length < 50 && 
     checkName;
 
+    const[seePassword, setSeePassword] = useState(false);
+  
+  function togglePassword() {
+    setSeePassword((prevState)=> !prevState)
+  }
+
+  const[seePasswordTwo, setSeePasswordTwo] = useState(false);
+  
+  function togglePasswordTwo() {
+    setSeePasswordTwo((prevState)=> !prevState)
+  }
     
 
     
@@ -76,18 +88,23 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         <label htmlFor={`${id}-password`}>Lozinka</label>
         <input 
         id={`${id}-password`}
-        type="password"
+        type={seePassword ? "text" : "password"}
         placeholder="Unesite Lozinku"
         value={userPassword}
         onChange={getUserPassword}
         />
+
+          <button
+          onClick={(()=>togglePassword())}
+          id="password-eye-registerOne"
+          >👁️</button>
+
 
         { userPassword.length < 8 && userPassword? <div className="password-popup">
             <img src={warningIcon} alt="warning-icon" />
             <p>Mora da sadrži minimum 8 karaktera</p>
         </div> : <p id="replacementPass">Replacement invincible text</p>}
 
-        
 
         </div>
 
@@ -95,7 +112,7 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         <label htmlFor={`${id}-ConfirmPassword`}>Potvrdite lozinku</label>
         <input 
         id={`${id}-ConfirmPassword`}
-        type="password" 
+        type={seePasswordTwo ? "text" : "password"} 
         placeholder="Potvrdite Lozinku"
         value={confirmUserPassword}
         onChange={getConfirmPassword}
@@ -106,6 +123,11 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
             <img src={warningIcon} alt="warning-icon" />
             <p>Lozinke se ne podudaraju. Pokušajte ponovo</p>
         </div> : <p id="replacement">Replacement invincible text</p>}
+
+        <button
+          onClick={(()=>togglePasswordTwo())}
+          id="password-eye-registerTwo"
+          >👁️</button>
 
         <div>
 
