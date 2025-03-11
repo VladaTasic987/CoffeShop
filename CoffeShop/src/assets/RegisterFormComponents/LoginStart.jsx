@@ -8,7 +8,7 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
   const[seePassword, setSeePassword] = useState(false);
   
   function togglePassword() {
-    setSeePassword(true)
+    setSeePassword((prevState)=> !prevState)
   }
 
   
