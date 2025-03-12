@@ -149,6 +149,7 @@ return (
         <button 
         className="buy"
         onClick={()=>getAmericano()}
+        disabled={americanoQuantity == 0 ? true : false}
         >
             <img 
             src={wheels} 

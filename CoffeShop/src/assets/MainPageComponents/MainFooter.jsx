@@ -1,6 +1,6 @@
 
 
-export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder}) {
+export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity}) {
 
 
 return (
@@ -14,7 +14,9 @@ return (
             <h4>Ukupno:</h4>
             <span>{totalOrder.toFixed(2)}</span>
             </div>  
-            <button><img src={arrowForward} alt="" />Naruci</button>
+            <button
+            disabled={orderQuantity > 6 ? true : false}
+            ><img src={arrowForward} alt="" />Naruci</button>
         </div>
 
         <div className="last-line"></div>    

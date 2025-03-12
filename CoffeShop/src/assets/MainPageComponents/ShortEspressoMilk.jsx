@@ -154,6 +154,7 @@ return (
         <button 
         className="buy"
         onClick={()=>getShortEspressoMilk()}
+        disabled={shortEspMilkQuantity == 0 ? true : false}
         >
             <img 
             src={wheels} 

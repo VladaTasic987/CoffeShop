@@ -23,7 +23,7 @@ const [orederId, setOrderId] = useState(1);
 // Short Espresso Logic
 
 const [cupSizeShortEspresso, setCupSizeShortEspresso] = useState("");
-const[shortEspQuantity, setShortEspQuantity] = useState(1);
+const[shortEspQuantity, setShortEspQuantity] = useState(0);
 const[selectTypeCoffeShortEspresso, setSelectTypeCoffeShortEspresso] = useState("brazil-zrno");
 const[selectTypeMilkShortEspresso, setSelectTypeMilkShortEspresso] = useState("obicno-mleko")
 const[shortEspressoItem, setShortEspressoItem] = useState("Espresso kratki");
@@ -46,11 +46,11 @@ function getCupSizeShortEspresso(cupSizeShortEspresso) {
 }
 
 function getShortEspressoQuantityPlus() {
-    setShortEspQuantity(shortEspQuantity + 1)
+    setShortEspQuantity( shortEspQuantity + 1 )
 }
 
 function getShortEspressoQuantityMinus() {
-    setShortEspQuantity(shortEspQuantity - 1)
+    setShortEspQuantity(prevCount => (prevCount > 0 ? prevCount - 1 : 0))
 }
 
 function getSelectedTypeCoffeShortEspresso(e) {
@@ -64,7 +64,7 @@ function getSelectedTypeMilkShortEspresso(e) {
 // Long Espresso Logic
 
 const [cupSizeLongEspresso, setCupSizeLongEspresso] = useState("");
-const[longEspQuantity, setLongEspQuantity] = useState(1);
+const[longEspQuantity, setLongEspQuantity] = useState(0);
 const[selectTypeCoffeLongEspresso, setSelectTypeCoffeLongEspresso] = useState("brazil-zrno");
 const[selectTypeMilkLongEspresso, setSelectTypeMilkLongEspresso] = useState("obicno-mleko")
 const[longEspressoItem, setLongEspressoItem] = useState("Espresso dugi");
@@ -91,7 +91,7 @@ function getLongEspressoQuantityPlus() {
 }
 
 function getLongEspressoQuantityMinus() {
-    setLongEspQuantity(longEspQuantity - 1)
+    setLongEspQuantity(prevCount => (prevCount > 0 ? prevCount - 1 : 0))
 }
 
 function getSelectedTypeCoffeLongEspresso(e) {
@@ -105,7 +105,7 @@ function getSelectedTypeMilkLongEspresso(e) {
 // Short Espresso with Milk Logic
 
 const [cupSizeShortEspressoMilk, setCupSizeShortEspressoMilk] = useState("");
-const[shortEspMilkQuantity, setShortEspMilkQuantity] = useState(1);
+const[shortEspMilkQuantity, setShortEspMilkQuantity] = useState(0);
 const[selectTypeCoffeShortEspressoMilk, setSelectTypeCoffeShortEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkShortEspressoMilk, setSelectTypeMilkShortEspressoMilk] = useState("obicno-mleko")
 const[shortEspressoMilkItem, setShortEspressoMilkItem] = useState("Espresso kratki sa mlekom");
@@ -133,7 +133,7 @@ function getShortEspressoMilkQuantityPlus() {
 }
 
 function getShortEspressoMilkQuantityMinus() {
-    setShortEspMilkQuantity(shortEspMilkQuantity - 1)
+    setShortEspMilkQuantity(prevCount => (prevCount > 0 ? prevCount - 1 : 0))
 }
 
 function getSelectedTypeCoffeShortEspressoMilk(e) {
@@ -147,7 +147,7 @@ function getSelectedTypeMilkShortEspressoMilk(e) {
 // Long Espresso with Milk Logic
 
 const [cupSizeLongEspressoMilk, setCupSizeLongEspressoMilk] = useState("");
-const[longEspMilkQuantity, setLongEspMilkQuantity] = useState(1);
+const[longEspMilkQuantity, setLongEspMilkQuantity] = useState(0);
 const[selectTypeCoffeLongEspressoMilk, setSelectTypeCoffeLongEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkLongEspressoMilk, setSelectTypeMilkLongEspressoMilk] = useState("obicno-mleko")
 const[longEspressoMilkItem, setLongEspressoMilkItem] = useState("Espresso dugi sa mlekom");
@@ -174,7 +174,7 @@ function getLongEspressoMilkQuantityPlus() {
 }
 
 function getLongEspressoMilkQuantityMinus() {
-    setLongEspMilkQuantity(longEspMilkQuantity - 1)
+    setLongEspMilkQuantity(prevCount => (prevCount > 0 ? prevCount - 1 : 0))
 }
 
 function getSelectedTypeCoffeLongEspressoMilk(event) {
@@ -190,7 +190,7 @@ function getSelectedTypeMilkLongEspressoMilk(e) {
 
 
 const [cupSizeAmericano, setCupSizeAmericano] = useState("");
-const[americanoQuantity, setAmericanoQuantity] = useState(1);
+const[americanoQuantity, setAmericanoQuantity] = useState(0);
 const[selectTypeCoffeAmericano, setSelectTypeCoffeAmericano] = useState("brazil-zrno");
 const[selectTypeMilkAmericano, setSelectTypeMilkAmericano] = useState("obicno-mleko")
 const[americanoItem, setAmericanoItem] = useState("Americano");
@@ -217,7 +217,7 @@ function getAmericanoQuantityPlus() {
 }
 
 function getAmericanoQuantityMinus() {
-    setAmericanoQuantity(americanoQuantity - 1)
+    setAmericanoQuantity(prevCount => (prevCount > 0 ? prevCount - 1 : 0))
 }
 
 function getSelectedTypeCoffeAmericano(e) {
@@ -237,6 +237,7 @@ function handleDeleteOrder(id) {
 const totalOrder = order.reduce((acc, num)=> acc + num.productPrice
 ,0)
 
+const orderQuantity = order.reduce((acc, num)=> acc + num.quantity ,0)
 
 
 return(
@@ -396,6 +397,7 @@ changePage={changePage}
     order={order}
     handleDeleteOrder={handleDeleteOrder}
     totalOrder={totalOrder}
+    orderQuantity={orderQuantity}
     
     />
 

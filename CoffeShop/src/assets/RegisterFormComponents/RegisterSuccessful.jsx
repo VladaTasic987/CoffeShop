@@ -14,7 +14,7 @@ export function RegisterSuccessful({logo, changePage, newRegisterLogin, arrowBac
         </div>
 
         <div className="success-header">
-            <img src={arrowBack} alt="back" />
+            {/* <img src={arrowBack} alt="back" /> */}
         </div>
 
         <div className="successful-registration">

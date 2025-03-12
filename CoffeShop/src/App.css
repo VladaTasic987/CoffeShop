@@ -162,6 +162,7 @@
   top: 285px;
   background-color: transparent;
   border: none;
+  outline: none;
 }
 
 .login-password input::placeholder {
@@ -218,7 +219,7 @@
 }
 
 .login-container .submit-btn:disabled {
-  color: #e8e8e8;
+  color: #817c7c;
 }
 
 .login-bottom {
@@ -493,6 +494,8 @@ color: #474747;
   top: 320px;
   right: 25px;
   background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 .register-container .password input::placeholder{
@@ -562,6 +565,8 @@ color: #474747;
   top: 410px;
   right: 25px;
   background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 .register-container .confirm-password input::placeholder {
@@ -608,7 +613,7 @@ color: #474747;
 }
 
 .register-container .register-btn:disabled {
-  color: #e8e8e8;
+  color: #817c7c;
 }
 
 .register-container .bottom-register {
@@ -799,7 +804,7 @@ color: #474747;
 }
 
 .forgot-pass-one .bottom-forgot button:disabled {
-  color: #e8e8e8;
+  color: #817c7c;
 }
 
 .forgot-pass-one .bottom-forgot img {
@@ -1111,6 +1116,8 @@ position: relative;
   top: 235px;
   right: 25px;
   background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 .forgotPassThree-container .middle-section .middle-one input::placeholder {
@@ -1160,6 +1167,8 @@ position: relative;
   top: 327px;
   right: 25px;
   background-color: transparent;
+  outline: none;
+  border: none;
 }
 
 .forgotPassThree-container .middle-section .middle-two input::placeholder {
@@ -1407,6 +1416,7 @@ position: relative;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid #164864;
 }
 
 .main-page .main-header {
@@ -1619,9 +1629,18 @@ scrollbar-width: none;
   margin-top: 4px;
 } 
 
+/* cup buttons onclick & on focus */
+
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card button:focus {
   outline: none;
+  border: 1px solid white;
 }
+
+.main-page .main-middle .short-espresso .right-content .right-bottom .big-card button:active{
+
+  border: 1px solid white;
+
+} 
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card .small-cup {
   padding: 0;
@@ -1662,7 +1681,7 @@ scrollbar-width: none;
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card .large-cup {
   padding: 0;
-  border: 0;
+  margin: 0;
   background-color: transparent;
   display: flex;
   justify-content: center;
@@ -1676,6 +1695,9 @@ scrollbar-width: none;
   width: 35px;
   height: 35px;
   margin-left: 5px;
+  padding: 0;
+  margin: 0;
+  border-radius: 100px;
 }
 
 .main-page .main-middle .short-espresso .right-content .right-bottom {
@@ -1765,6 +1787,7 @@ scrollbar-width: none;
   font-weight: 500;
   font-size: 10px;
   line-height: 15.34px;
+  color: white;
 }
 
 .short-popup .popup-options .coffe option {
@@ -1815,6 +1838,7 @@ scrollbar-width: none;
   font-weight: 500;
   font-size: 10px;
   line-height: 15.34px;
+  color: white;
 }
 
 .short-popup .popup-options .milk option {
@@ -1858,11 +1882,17 @@ scrollbar-width: none;
   margin-right: 7px;
   margin-top: 15px;
   margin-bottom: 10px;
+  color: white;
+}
+
+.short-popup .popup-bottom .buy:disabled {
+  color: #817c7c;
 }
 
 .short-popup .popup-bottom .buy img {
   width: 15.43px;
   height: 15.43px;
+  background-color: transparent;
 }
 
 .short-popup .popup-bottom .increase-decrease {
@@ -1969,9 +1999,13 @@ border-radius: 10px 10px 0px 0px;
   font-size: 16px;
   line-height: 21px;
   letter-spacing: -0.32px;
-  color: #ffffff;
+  color: white;
   background-color: #164864;
   margin-right: 12px;
+}
+
+.main-page .main-bottom .bottom-fixed .btn-amount button:disabled {
+  color: #817c7c;
 }
 
 .main-page .main-bottom .bottom-fixed .btn-amount .sum {

@@ -167,6 +167,7 @@ return (
         <button 
         className="buy"
         onClick={()=>getLongEspressoMilk()}
+        disabled={longEspMilkQuantity == 0 ? true : false}
         >
             <img 
             src={wheels} 

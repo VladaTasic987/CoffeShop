@@ -169,6 +169,7 @@ return (
         <button 
         className="buy"
         onClick={()=>getLongEspresso()}
+        disabled={longEspQuantity == 0 ?true : false}
         >
         <img 
         src={wheels} 

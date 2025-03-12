@@ -144,8 +144,13 @@ return (
         </div>
 
         <button 
-        onClick={()=>getShortEspresso()}
-        className="buy">
+        onClick={()=>{     
+        getShortEspresso();    
+        }}
+
+        className="buy"
+        disabled={shortEspQuantity == 0 ?true : false}
+        >
             <img src={wheels} alt="wheels" />Dodaj u korpu
         </button>
 
