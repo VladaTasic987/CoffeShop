@@ -15,7 +15,7 @@ return (
             <span>{totalOrder.toFixed(2)}</span>
             </div>  
             <button
-            disabled={orderQuantity > 6 ? true : false}
+            disabled={orderQuantity >= 6 ? true : false}
             ><img src={arrowForward} alt="" />Naruci</button>
         </div>
 
