@@ -1,7 +1,14 @@
 
 
-export function OrderStatus({statusBar, orderOne, clock, mobileHand, arrowBack}) {
+export function OrderStatus({statusBar, orderOne, clock, mobileHand, arrowBack, formatTime, timeLeft, orderTwo, orderThree, changePage}) {
 
+const styleSecondParagraph = {
+    color: timeLeft < 30 ? "#248CC5" : "#BFBFBF"
+}   
+
+const styleThirdParagraph = {
+    color: timeLeft === 0 ? "#248CC5" : "#BFBFBF"
+}   
 
 return (
 
@@ -13,23 +20,28 @@ return (
         </div>
 
         <div className="order-header">
-            <button><img src={arrowBack} alt="back" /></button>
+            <button
+            onClick={()=>changePage("Main")}
+            ><img src={arrowBack} alt="back" /></button>
         </div>
 
         <div className="order-main-top">
             <p>ID porudzbine: <span>1234567</span></p>
             <div className="time">
                 <img src={clock} alt="clock" />
-                <h3>00 : 15 : 05</h3>
+                <h3>00:0{formatTime(timeLeft)}</h3>
+                
             </div>
             <img 
-            src={orderOne} 
+            src={timeLeft > 30 ? orderOne : timeLeft < 30 && timeLeft !== 0 ? orderTwo
+            : timeLeft === 0  ? orderThree : orderThree
+            } 
             alt="ord-one" 
             className="order-one"/>
             <div className="status">
                 <p>Porudzbina pripremljena</p>
-                <h6>Kafa se priprema</h6>
-                <h5>Kafa je spremna</h5>
+                <h6 style={styleSecondParagraph}>Kafa se priprema</h6>
+                <h5 style={styleThirdParagraph}>Kafa je spremna</h5>
             </div>
         </div>
 
@@ -38,8 +50,9 @@ return (
         </div>
 
         <div className="order-main-bottom">
-            <h3>Porudzbina je primljena</h3>
+            {timeLeft > 30 ? <h3>Porudzbina je primljena</h3> : timeLeft < 30 && timeLeft !== 0 ? <h3>Kafa se priprema</h3> : timeLeft === 0 ? <h3>Kafa je spremna</h3> : <h3>Porudzbina je primljena</h3>}
         </div>
+
 
     </div>
 

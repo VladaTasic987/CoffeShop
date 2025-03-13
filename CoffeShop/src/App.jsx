@@ -29,6 +29,8 @@ import arrowBack from './assets/Images/arrowBack.png'
 import orderOne from './assets/Images/orderOne.png'
 import clock from './assets/Images/clock.png'
 import mobileHand from './assets/Images/mobileHand.png'
+import orderTwo from './assets/Images/orderTwo.png'
+import orderThree from './assets/Images/orderThree.png'
 
 
 
@@ -64,6 +66,8 @@ function App() {
       orderOne={orderOne}
       clock={clock}
       mobileHand={mobileHand}
+      orderTwo={orderTwo}
+      orderThree={orderThree}
       />
     </>
   )

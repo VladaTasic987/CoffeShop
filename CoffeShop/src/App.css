@@ -1633,14 +1633,13 @@ scrollbar-width: none;
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card button:focus {
   outline: none;
-  border: 1px solid white;
 }
 
-.main-page .main-middle .short-espresso .right-content .right-bottom .big-card button:active{
+/* .main-page .main-middle .short-espresso .right-content .right-bottom .big-card button:active{
 
   border: 1px solid white;
 
-} 
+}  */
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card .small-cup {
   padding: 0;
@@ -1689,7 +1688,10 @@ scrollbar-width: none;
   width: 30px;
   height: 30px;
   border-radius: 100px;
+  border: none;
 }
+
+
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .big-card .large-cup img {
   width: 35px;
@@ -1699,6 +1701,7 @@ scrollbar-width: none;
   margin: 0;
   border-radius: 100px;
 }
+
 
 .main-page .main-middle .short-espresso .right-content .right-bottom {
   margin-top: 5px;
@@ -1711,7 +1714,7 @@ scrollbar-width: none;
   font-size: 12px;
   line-height: 11px;
   letter-spacing: -0.32px;
-
+  color: white;
 }
 
 .main-page .main-middle .short-espresso .right-content .right-bottom .small-card .text span {
@@ -1925,6 +1928,11 @@ scrollbar-width: none;
   height: 31px;
   width: 31px;
   margin-bottom: 4px;
+  border: none;
+}
+
+.short-popup .popup-bottom .increase-decrease .increase:focus {
+  outline: none;
 }
 
 .short-popup .popup-bottom .increase-decrease .increase img {
@@ -1939,6 +1947,11 @@ scrollbar-width: none;
   height: 31px;
   width: 31px;
   margin-bottom: 4px;
+  border: none;
+}
+
+.short-popup .popup-bottom .increase-decrease .decrease:focus {
+  outline: none;
 }
 
 .short-popup .popup-bottom .increase-decrease .decrease img {

@@ -9,13 +9,13 @@ import { MainPage } from "../MainPageComponents/MainPage"
 import { LoyaltyProgram } from "../UserProfile/LoyaltyProgram"
 import { OrderStatus } from "../OrderStatus/OrderStatus"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useId } from "react";
 
 
 
 
-export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand}) {
+export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree}) {
 
 const[idReg, setIdReg] = useState(3);
 const[name, setName] = useState("");
@@ -107,6 +107,38 @@ function clearInputs() {
 const getOrderTotal = order.reduce((acc, order) => acc + order.quantity, 0);
 
 
+//timer functionality
+
+const [timeLeft, setTimeLeft] = useState(60); // 15 minutes in seconds
+    const [isRunning, setIsRunning] = useState(false);
+
+    useEffect(() => {
+        let interval;
+    
+        if (isRunning && timeLeft > 0) {
+          interval = setInterval(() => {
+            setTimeLeft((prevTime) => prevTime - 1);
+          }, 1000);
+        } else if (timeLeft === 0) {
+          clearInterval(interval);
+          setIsRunning(false);
+        }
+    
+        return () => clearInterval(interval); // Cleanup on unmount
+      }, [isRunning, timeLeft]);
+
+
+      const startTimer = () => {
+        setIsRunning(true);
+      };
+
+      const formatTime = (seconds) => {
+        const minutes = Math.floor(seconds / 60);
+        const remainingSeconds = seconds % 60;
+        return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
+      };
+
+    console.log(timeLeft)
 
 return(
 
@@ -230,6 +262,7 @@ id={id}
 order={order}
 setOrder={setOrder}
 changePage={changePage}
+startTimer={startTimer}
 /> : page == "SubmitForm"}
 
 
@@ -247,13 +280,19 @@ changePage={changePage}
 getOrderTotal={getOrderTotal}
 /> : null}
 
-{/* <OrderStatus
+{page == "Timer" ? <OrderStatus
 statusBar={statusBar}
 orderOne={orderOne}
 clock={clock}
 mobileHand={mobileHand}
 arrowBack={arrowBack}
-/> */}
+orderThree={orderThree}
+
+formatTime={formatTime}
+timeLeft={timeLeft}
+orderTwo={orderTwo}
+changePage={changePage}
+/> : null}
 
 </>
 

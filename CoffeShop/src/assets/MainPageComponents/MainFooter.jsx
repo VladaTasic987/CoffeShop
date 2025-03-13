@@ -1,6 +1,6 @@
 
 
-export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity}) {
+export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity, startTimer, changePage}) {
 
 
 return (
@@ -15,7 +15,11 @@ return (
             <span>{totalOrder.toFixed(2)}</span>
             </div>  
             <button
-            disabled={orderQuantity >= 6 ? true : false}
+            onClick={()=>{
+            changePage("Timer");  
+            startTimer();
+            }}
+            disabled={orderQuantity == 0 ? true : orderQuantity >= 6 ? true : false}
             ><img src={arrowForward} alt="" />Naruci</button>
         </div>
 
