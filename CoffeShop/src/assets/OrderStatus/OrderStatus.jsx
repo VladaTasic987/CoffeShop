@@ -33,8 +33,8 @@ return (
                 
             </div>
             <img 
-            src={timeLeft > 30 ? orderOne : timeLeft < 30 && timeLeft !== 0 ? orderTwo
-            : timeLeft === 0  ? orderThree : orderThree
+            src={timeLeft >= 30 ? orderOne : timeLeft <= 30 && timeLeft !== 0 ? orderTwo
+            : timeLeft === 0  ? orderThree : orderTwo
             } 
             alt="ord-one" 
             className="order-one"/>
