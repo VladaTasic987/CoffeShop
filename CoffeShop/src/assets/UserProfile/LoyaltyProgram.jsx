@@ -23,7 +23,9 @@ return (
             onClick={()=>changePage("Main")}
             >
                 <img src={arrowBack} alt="back" /></button>
-            <button className="log-out">Log out</button>
+            <button
+            onClick={()=>changePage("SubmitForm")}
+            className="log-out">Log out</button>
             
         </div>
 
