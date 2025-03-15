@@ -1,6 +1,6 @@
 
 
-export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack, userData, order, changePage, getOrderTotal}) {
+export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack, userData, order, changePage, getOrderTotal, LogOut}) {
 
 
 
@@ -24,7 +24,9 @@ return (
             >
                 <img src={arrowBack} alt="back" /></button>
             <button
-            onClick={()=>changePage("SubmitForm")}
+            onClick={()=>{
+            LogOut();    
+            changePage("SubmitForm")}}
             className="log-out">Log out</button>
             
         </div>

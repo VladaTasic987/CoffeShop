@@ -36,7 +36,12 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
         </div>
 
         <div className="register-header">
+            <button 
+            onClick={()=>changePage("SubmitForm")}
+            className="back-btn">
             <img src={arrowBack} alt="arrow" />
+            </button>
+            
         </div>
 
         <div className="register-container">

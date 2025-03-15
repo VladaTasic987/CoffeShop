@@ -30,6 +30,8 @@ const[userData, setUserData] = useState([
     {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: false},
 ]);
 
+console.log(userData);
+
 const id = useId();
 
 function getUserName(e) {
@@ -96,6 +98,9 @@ function newRegisterLogin() {
     })
 }
 
+function LogOut() {
+    console.log("Vladimir")
+}
 
 function clearInputs() {
     setName("");
@@ -138,7 +143,6 @@ const [timeLeft, setTimeLeft] = useState(60); // 15 minutes in seconds
         return `${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
       };
 
-    console.log(timeLeft)
 
 return(
 
@@ -278,6 +282,7 @@ userData={userData}
 order={order}
 changePage={changePage}
 getOrderTotal={getOrderTotal}
+LogOut={LogOut}
 /> : null}
 
 {page == "Timer" ? <OrderStatus
