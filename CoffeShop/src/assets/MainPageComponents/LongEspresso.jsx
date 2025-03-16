@@ -1,6 +1,6 @@
 
 
-export function LongEspresso({coffeImg, plus,longEspressoVisible, setLongEspressoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getLongEspresso, getCupSizeLongEspresso, getLongEspressoQuantityPlus, getLongEspressoQuantityMinus, longEspQuantity, selectTypeCoffeLongEspresso, getSelectedTypeCoffeLongEspresso, selectTypeMilkLongEspresso, getSelectedTypeMilkLongEspresso}) {
+export function LongEspresso({coffeImg, plus,longEspressoVisible, setLongEspressoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getLongEspresso, getCupSizeLongEspresso, getLongEspressoQuantityPlus, getLongEspressoQuantityMinus, longEspQuantity, selectTypeCoffeLongEspresso, getSelectedTypeCoffeLongEspresso, selectTypeMilkLongEspresso, getSelectedTypeMilkLongEspresso, setLongEspresoPrice}) {
 
 
 return (
@@ -44,19 +44,25 @@ return (
         </div> 
         :   <div className="big-card">
             <button 
-            onClick={()=>getCupSizeLongEspresso("small")}
+            onClick={()=>{getCupSizeLongEspresso("small");
+            setLongEspresoPrice(130);    
+            }}
             className="small-cup"
             >
                 <img src={smallCup} alt="smallCup" />
             </button>
             <button 
-            onClick={()=>getCupSizeLongEspresso("medium")}
+            onClick={()=>{getCupSizeLongEspresso("medium")
+            setLongEspresoPrice(140)    
+            }}
             className="medium-cup"
             >
                 <img src={mediumCup} alt="smallCup" />
             </button>
             <button 
-            onClick={()=>getCupSizeLongEspresso("large")}
+            onClick={()=>{getCupSizeLongEspresso("large")
+            setLongEspresoPrice(150)    
+            }}
             className="large-cup"
             >
                 <img src={largeCup} alt="smallCup" />

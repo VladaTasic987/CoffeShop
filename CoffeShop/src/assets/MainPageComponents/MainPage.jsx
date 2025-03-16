@@ -27,6 +27,7 @@ const[shortEspQuantity, setShortEspQuantity] = useState(0);
 const[selectTypeCoffeShortEspresso, setSelectTypeCoffeShortEspresso] = useState("brazil-zrno");
 const[selectTypeMilkShortEspresso, setSelectTypeMilkShortEspresso] = useState("obicno-mleko")
 const[shortEspressoItem, setShortEspressoItem] = useState("Espresso kratki");
+const[shortEspressoPrice, setShortEspresoPrice] = useState(120)
 
 function getShortEspresso() {
     setOrderId((prevId)=> prevId + 1)
@@ -34,11 +35,19 @@ function getShortEspresso() {
     setOrder([...order, 
         {id: orederId, 
         productName: shortEspressoItem,
-        productPrice: 120, 
+        productPrice: shortEspressoPrice, 
         quantity: shortEspQuantity, 
         cupSize: cupSizeShortEspresso, 
         coffeType: selectTypeCoffeShortEspresso, milkType: selectTypeMilkShortEspresso 
     }])
+}
+
+function priceChageBasedOnCupSizeM() {
+    setShortEspresoPrice(130)
+}
+
+function priceChageBasedOnCupSizeL() {
+    setShortEspresoPrice(140)
 }
 
 function getCupSizeShortEspresso(cupSizeShortEspresso) {
@@ -68,6 +77,7 @@ const[longEspQuantity, setLongEspQuantity] = useState(0);
 const[selectTypeCoffeLongEspresso, setSelectTypeCoffeLongEspresso] = useState("brazil-zrno");
 const[selectTypeMilkLongEspresso, setSelectTypeMilkLongEspresso] = useState("obicno-mleko")
 const[longEspressoItem, setLongEspressoItem] = useState("Espresso dugi");
+const[longEspressoPrice, setLongEspresoPrice] = useState(130)
 
 function getLongEspresso() {
     setOrderId((prevId)=> prevId + 1)
@@ -75,7 +85,7 @@ function getLongEspresso() {
     setOrder([...order, 
         {id: orederId, 
         productName: longEspressoItem,
-        productPrice: 130, 
+        productPrice: longEspressoPrice, 
         quantity: longEspQuantity, 
         cupSize: cupSizeLongEspresso, 
         coffeType: selectTypeCoffeLongEspresso, milkType: selectTypeMilkLongEspresso }
@@ -109,6 +119,7 @@ const[shortEspMilkQuantity, setShortEspMilkQuantity] = useState(0);
 const[selectTypeCoffeShortEspressoMilk, setSelectTypeCoffeShortEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkShortEspressoMilk, setSelectTypeMilkShortEspressoMilk] = useState("obicno-mleko")
 const[shortEspressoMilkItem, setShortEspressoMilkItem] = useState("Espresso kratki sa mlekom");
+const[shortEspressoMilkPrice, setShortEspresoMilkPrice] = useState(140)
 
 function getShortEspressoMilk() {
     setOrderId((prevId) => prevId + 1)
@@ -116,7 +127,7 @@ function getShortEspressoMilk() {
     setOrder([...order, 
         {id: orederId, 
         productName: shortEspressoMilkItem,
-        productPrice: 140, 
+        productPrice: shortEspressoMilkPrice, 
         quantity: shortEspMilkQuantity, 
         cupSize: cupSizeShortEspressoMilk, 
         coffeType: selectTypeCoffeShortEspressoMilk, 
@@ -151,6 +162,7 @@ const[longEspMilkQuantity, setLongEspMilkQuantity] = useState(0);
 const[selectTypeCoffeLongEspressoMilk, setSelectTypeCoffeLongEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkLongEspressoMilk, setSelectTypeMilkLongEspressoMilk] = useState("obicno-mleko")
 const[longEspressoMilkItem, setLongEspressoMilkItem] = useState("Espresso dugi sa mlekom");
+const[longEspressoMilkPrice, setLongEspresoMilkPrice] = useState(150)
 
 function getLongEspressoMilk() {
     setOrderId((prevId)=>prevId + 1)
@@ -158,7 +170,7 @@ function getLongEspressoMilk() {
     setOrder([...order, 
         {id: orederId, 
         productName: longEspressoMilkItem,
-        productPrice: 150, 
+        productPrice: longEspressoMilkPrice, 
         quantity: longEspMilkQuantity, 
         cupSize: cupSizeLongEspressoMilk, 
         coffeType: selectTypeCoffeLongEspressoMilk, milkType: selectTypeMilkLongEspressoMilk }
@@ -194,6 +206,7 @@ const[americanoQuantity, setAmericanoQuantity] = useState(0);
 const[selectTypeCoffeAmericano, setSelectTypeCoffeAmericano] = useState("brazil-zrno");
 const[selectTypeMilkAmericano, setSelectTypeMilkAmericano] = useState("obicno-mleko")
 const[americanoItem, setAmericanoItem] = useState("Americano");
+const[americanoPrice, setAmericanoPrice] = useState(150)
 
 function getAmericano() {
     setOrderId((prevId)=>prevId + 1)
@@ -201,7 +214,7 @@ function getAmericano() {
     setOrder([...order, 
         {id: orederId, 
         productName: americanoItem,
-        productPrice: 150, 
+        productPrice: americanoPrice, 
         quantity: americanoQuantity, 
         cupSize: cupSizeAmericano, 
         coffeType: selectTypeCoffeAmericano, milkType: selectTypeMilkAmericano 
@@ -279,6 +292,9 @@ changePage={changePage}
         getSelectedTypeCoffeShortEspresso={getSelectedTypeCoffeShortEspresso}
         selectTypeMilkShortEspresso={selectTypeMilkShortEspresso}
         getSelectedTypeMilkShortEspresso={getSelectedTypeMilkShortEspresso}
+        priceChageBasedOnCupSizeM={priceChageBasedOnCupSizeM}
+        priceChageBasedOnCupSizeL={priceChageBasedOnCupSizeL}
+        setShortEspresoPrice={setShortEspresoPrice}
         
         />
 
@@ -306,6 +322,7 @@ changePage={changePage}
         getSelectedTypeCoffeLongEspresso={getSelectedTypeCoffeLongEspresso}
         selectTypeMilkLongEspresso={selectTypeMilkLongEspresso}
         getSelectedTypeMilkLongEspresso={getSelectedTypeMilkLongEspresso}
+        setLongEspresoPrice={setLongEspresoPrice}
         />
 
         <div id="separator"></div>
@@ -332,6 +349,7 @@ changePage={changePage}
         getSelectedTypeCoffeShortEspressoMilk={getSelectedTypeCoffeShortEspressoMilk}
         selectTypeMilkShortEspressoMilk={selectTypeMilkShortEspressoMilk}
         getSelectedTypeMilkShortEspressoMilk={getSelectedTypeMilkShortEspressoMilk}
+        setShortEspresoMilkPrice={setShortEspresoMilkPrice}
         />
 
         <div id="separator"></div>
@@ -358,6 +376,7 @@ changePage={changePage}
         selectTypeCoffeLongEspressoMilk={selectTypeCoffeLongEspressoMilk}
         getSelectedTypeMilkLongEspressoMilk={getSelectedTypeMilkLongEspressoMilk}
         selectTypeMilkLongEspressoMilk={selectTypeMilkLongEspressoMilk}
+        setLongEspresoMilkPrice={setLongEspresoMilkPrice}
         />
 
         <div id="separator"></div>
@@ -384,6 +403,7 @@ changePage={changePage}
         selectTypeCoffeAmericano={selectTypeCoffeAmericano}
         getSelectedTypeMilkAmericano={getSelectedTypeMilkAmericano}
         selectTypeMilkAmericano={selectTypeMilkAmericano}
+        setAmericanoPrice={setAmericanoPrice}
         />
 
     </div>

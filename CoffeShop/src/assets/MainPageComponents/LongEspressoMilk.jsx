@@ -1,6 +1,6 @@
 
 
-export function LongEspressoMilk({coffeImg, plus,longEspressoMilkVisible, setLongEspressoMilkVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getLongEspressoMilk, getCupSizeLongEspressoMilk, getLongEspressoMilkQuantityPlus,getLongEspressoMilkQuantityMinus, longEspMilkQuantity, getSelectedTypeCoffeLongEspressoMilk, selectTypeCoffeLongEspressoMilk, getSelectedTypeMilkLongEspressoMilk, selectTypeMilkLongEspressoMilk}) {
+export function LongEspressoMilk({coffeImg, plus,longEspressoMilkVisible, setLongEspressoMilkVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getLongEspressoMilk, getCupSizeLongEspressoMilk, getLongEspressoMilkQuantityPlus,getLongEspressoMilkQuantityMinus, longEspMilkQuantity, getSelectedTypeCoffeLongEspressoMilk, selectTypeCoffeLongEspressoMilk, getSelectedTypeMilkLongEspressoMilk, selectTypeMilkLongEspressoMilk, setLongEspresoMilkPrice}) {
 
 
 return (
@@ -43,7 +43,9 @@ return (
                 <div className="big-card">
                 <button 
                 className="small-cup"
-                onClick={()=>getCupSizeLongEspressoMilk("small")}
+                onClick={()=>{getCupSizeLongEspressoMilk("small")
+                setLongEspresoMilkPrice(150)    
+                }}
                 >
                     <img 
                     src={smallCup} 
@@ -52,7 +54,9 @@ return (
                 </button>
                 <button 
                 className="medium-cup"
-                onClick={()=>getCupSizeLongEspressoMilk("medium")}
+                onClick={()=>{getCupSizeLongEspressoMilk("medium")
+                setLongEspresoMilkPrice(160)    
+                }}
                 >
                     <img 
                     src={mediumCup} 
@@ -61,7 +65,9 @@ return (
                 </button>
                 <button 
                 className="large-cup"
-                onClick={()=>getCupSizeLongEspressoMilk("large")}
+                onClick={()=>{getCupSizeLongEspressoMilk("large")
+                setLongEspresoMilkPrice(170)    
+                }}
                 >
                     <img 
                     src={largeCup} 

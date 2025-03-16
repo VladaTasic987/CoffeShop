@@ -1,5 +1,5 @@
 
-export function ShortEspressoMilk({coffeImg, plus,shortEspressoMilkVisible, setShortEspressoMilkVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getShortEspressoMilk, getCupSizeShortEspressoMilk,getShortEspressoMilkQuantityPlus, getShortEspressoMilkQuantityMinus, shortEspMilkQuantity, selectTypeCoffeShortEspressoMilk, getSelectedTypeCoffeShortEspressoMilk, selectTypeMilkShortEspressoMilk, getSelectedTypeMilkShortEspressoMilk}) {
+export function ShortEspressoMilk({coffeImg, plus,shortEspressoMilkVisible, setShortEspressoMilkVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getShortEspressoMilk, getCupSizeShortEspressoMilk,getShortEspressoMilkQuantityPlus, getShortEspressoMilkQuantityMinus, shortEspMilkQuantity, selectTypeCoffeShortEspressoMilk, getSelectedTypeCoffeShortEspressoMilk, selectTypeMilkShortEspressoMilk, getSelectedTypeMilkShortEspressoMilk, setShortEspresoMilkPrice}) {
 
 return (
 
@@ -40,7 +40,9 @@ return (
                 <div className="big-card">
                 <button 
                 className="small-cup"
-                onClick={()=>getCupSizeShortEspressoMilk("small")}
+                onClick={()=>{getCupSizeShortEspressoMilk("small")
+                setShortEspresoMilkPrice(140)    
+                }}
                 >
                     <img 
                     src={smallCup} 
@@ -49,7 +51,9 @@ return (
                 </button>
                 <button 
                 className="medium-cup"
-                onClick={()=>getCupSizeShortEspressoMilk("medium")}
+                onClick={()=>{getCupSizeShortEspressoMilk("medium")
+                setShortEspresoMilkPrice(150)
+                }}
                 >
                     <img 
                     src={mediumCup} 
@@ -58,7 +62,9 @@ return (
                 </button>
                 <button 
                 className="large-cup"
-                onClick={()=>getCupSizeShortEspressoMilk("large")}
+                onClick={()=>{getCupSizeShortEspressoMilk("large")
+                setShortEspresoMilkPrice(160)
+                }}
                 >
                     <img src={largeCup} alt="smallCup" />
                 </button>

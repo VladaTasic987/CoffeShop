@@ -1,6 +1,6 @@
 
 
-export function ShortEspresso({coffeImg, plus,shortEspressoVisible, setShortEspressoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getCupSizeShortEspresso, getShortEspresso, getShortEspressoQuantityPlus, getShortEspressoQuantityMinus, shortEspQuantity, selectTypeCoffeShortEspresso, getSelectedTypeCoffeShortEspresso, selectTypeMilkShortEspresso, getSelectedTypeMilkShortEspresso}) {
+export function ShortEspresso({coffeImg, plus,shortEspressoVisible, setShortEspressoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getCupSizeShortEspresso, getShortEspresso, getShortEspressoQuantityPlus, getShortEspressoQuantityMinus, shortEspQuantity, selectTypeCoffeShortEspresso, getSelectedTypeCoffeShortEspresso, selectTypeMilkShortEspresso, getSelectedTypeMilkShortEspresso, priceChageBasedOnCupSizeM, priceChageBasedOnCupSizeL,setShortEspresoPrice}) {
 
     
 
@@ -46,19 +46,25 @@ return (
             : <div className="big-card">
 
                 <button
-                onClick={()=>getCupSizeShortEspresso("small")} 
+                onClick={()=>{getCupSizeShortEspresso("small")
+                setShortEspresoPrice(120)    
+                }} 
                 className="small-cup">
                     <img src={smallCup} alt="smallCup" />
                 </button>
 
                 <button 
-                onClick={()=>getCupSizeShortEspresso("medium")} 
+                onClick={()=>{getCupSizeShortEspresso("medium")
+                priceChageBasedOnCupSizeM()    
+                }} 
                 className="medium-cup">
                     <img src={mediumCup} alt="mediumCup" />
                 </button>
 
                 <button
-                onClick={()=>getCupSizeShortEspresso("large")} 
+                onClick={()=>{getCupSizeShortEspresso("large");
+                priceChageBasedOnCupSizeL();
+                }} 
                 className="large-cup">
                     <img src={largeCup} alt="largeCup" />
                 </button>

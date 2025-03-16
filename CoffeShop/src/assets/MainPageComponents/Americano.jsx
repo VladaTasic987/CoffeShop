@@ -1,6 +1,6 @@
 
 
-export function Americano({coffeImg, plus,americanoVisible, setAmericanoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getAmericano, getCupSizeAmericano, getAmericanoQuantityPlus, getAmericanoQuantityMinus, getSelectedTypeCoffeAmericano, selectTypeCoffeAmericano, getSelectedTypeMilkAmericano, selectTypeMilkAmericano, americanoQuantity}) {
+export function Americano({coffeImg, plus,americanoVisible, setAmericanoVisible, cups, wheels, minus, id, smallCup, mediumCup, largeCup, getAmericano, getCupSizeAmericano, getAmericanoQuantityPlus, getAmericanoQuantityMinus, getSelectedTypeCoffeAmericano, selectTypeCoffeAmericano, getSelectedTypeMilkAmericano, selectTypeMilkAmericano, americanoQuantity, setAmericanoPrice}) {
 
 
 return (
@@ -42,19 +42,25 @@ return (
                 <div className="big-card">
                 <button 
                 className="small-cup"
-                onClick={()=>getCupSizeAmericano("small")}
+                onClick={()=>{getCupSizeAmericano("small")
+                setAmericanoPrice(150)    
+                }}
                 >
                     <img src={smallCup} alt="smallCup" />
                 </button>
                 <button 
                 className="medium-cup"
-                onClick={()=>getCupSizeAmericano("medium")}
+                onClick={()=>{getCupSizeAmericano("medium")
+                setAmericanoPrice(160)
+                }}
                 >
                     <img src={mediumCup} alt="smallCup" />
                 </button>
                 <button 
                 className="large-cup"
-                onClick={()=>getCupSizeAmericano("large")}
+                onClick={()=>{getCupSizeAmericano("large")
+                setAmericanoPrice(170)    
+                }}
                 >
                     <img src={largeCup} alt="smallCup" />
                 </button>
