@@ -17,7 +17,7 @@ import { useId } from "react";
 
 export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree}) {
 
-const[idReg, setIdReg] = useState(3);
+const[idReg, setIdReg] = useState(4);
 const[name, setName] = useState("");
 const[email, setEmail] = useState("");
 const[userPassword, setUserPassword] = useState("")
@@ -28,6 +28,7 @@ const [order, setOrder] = useState([]);
 const[userData, setUserData] = useState([
     {id: 1, name: "Vladimir Tasic", email: "vlada@gmail.com",password: "12345678", loggedIn: false},
     {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: false},
+    {id: 3, name: "Aleksandra Mircic", email: "test@quantox.com",password: "quantoxtest", loggedIn: false},
 ]);
 
 
