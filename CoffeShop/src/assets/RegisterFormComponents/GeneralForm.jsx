@@ -8,6 +8,7 @@ import { RegisterSuccessful } from "./RegisterSuccessful"
 import { MainPage } from "../MainPageComponents/MainPage"
 import { LoyaltyProgram } from "../UserProfile/LoyaltyProgram"
 import { OrderStatus } from "../OrderStatus/OrderStatus"
+import {AdminOrders} from "../AdminOrdersComponents/AdminOrders.jsx";
 
 import { useState, useEffect } from "react"
 import { useId } from "react";
@@ -15,7 +16,7 @@ import { useId } from "react";
 
 
 
-export function GeneralForm({logo, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree}) {
+export function GeneralForm({logo, vector, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree}) {
 
 const[idReg, setIdReg] = useState(4);
 const[name, setName] = useState("");
@@ -299,6 +300,16 @@ timeLeft={timeLeft}
 orderTwo={orderTwo}
 changePage={changePage}
 /> : null}
+
+    <AdminOrders
+
+        order={order}
+        setOrder={setOrder}
+        logo={logo}
+        statusBar={statusBar}
+        vector={vector}
+
+    />
 
 </>
 

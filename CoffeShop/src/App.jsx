@@ -31,7 +31,7 @@ import clock from './assets/Images/clock.png'
 import mobileHand from './assets/Images/mobileHand.png'
 import orderTwo from './assets/Images/orderTwo.png'
 import orderThree from './assets/Images/orderThree.png'
-
+import vector from './assets/Images/vector.png'
 
 
 function App() {
@@ -68,7 +68,9 @@ function App() {
       mobileHand={mobileHand}
       orderTwo={orderTwo}
       orderThree={orderThree}
+      vector={vector}
       />
+
     </>
   )
 }

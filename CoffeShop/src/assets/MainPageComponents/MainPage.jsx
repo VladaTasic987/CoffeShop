@@ -247,7 +247,7 @@ function handleDeleteOrder(id) {
     setOrder(order.filter((oneOrder)=> oneOrder.id !== id))
 }
 
-const totalOrder = order.reduce((acc, num)=> acc + num.productPrice
+const totalOrder = order.reduce((acc, num)=> (acc + num.productPrice) * num.quantity
 ,0)
 
 const orderQuantity = order.reduce((acc, num)=> acc + num.quantity ,0)
