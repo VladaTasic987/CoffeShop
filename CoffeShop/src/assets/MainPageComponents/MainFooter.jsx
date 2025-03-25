@@ -1,7 +1,7 @@
 import {useState} from "react";
 
 
-export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity, startTimer, changePage}) {
+export function MainFooter({arrowForward, allItems, setAllItems, generateItems, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity, startTimer, changePage}) {
 
 
 return (
@@ -17,6 +17,9 @@ return (
             </div>  
             <button
             onClick={()=>{
+               generateItems(order)
+                console.log(order);
+                console.log(allItems);
             changePage("Timer");
             startTimer();
             }}

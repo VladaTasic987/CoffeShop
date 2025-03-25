@@ -9,7 +9,8 @@ import { Americano } from "./Americano";
 
 
 
-export function MainPage({statusBar, avatar, logo, arrowForward, coffeImg, plus, cups, wheels, minus, id, smallCup, mediumCup, largeCup, delBtn, order, setOrder, changePage, startTimer}) {
+export function MainPage({statusBar, allItems, generateItems, avatar, logo, arrowForward, coffeImg, plus, cups, wheels, minus, id, smallCup, mediumCup, largeCup, delBtn, order, setOrder, changePage, startTimer}) {
+
 
 const[shortEspressoVisible, setShortEspressoVisible] = useState("false");
 const[longEspressoVisible, setLongEspressoVisible] = useState("false");
@@ -411,6 +412,8 @@ changePage={changePage}
     <MainFooter 
     arrowForward={arrowForward}
     delBtn={delBtn}
+    generateItems={generateItems}
+    allItems={allItems}
     order={order}
     handleDeleteOrder={handleDeleteOrder}
     totalOrder={totalOrder}

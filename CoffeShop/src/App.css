@@ -2513,9 +2513,21 @@ border-radius: 10px 10px 0px 0px;
   align-items: center;
 }
 
-.order-status .order-main-middle img {
+.order-status .order-main-middle img .mobileHand{
   width: 355px;
   height: 224px;
+}
+
+.order-status .order-main-middle .orderTwoImg{
+  margin-left: 25px;
+  width: 200px;
+  height: 200px;
+}
+
+.order-status .order-main-middle .orderThreeImg{
+  margin-left: 25px;
+  width: 153px;
+  height: 200px;
 }
 
 .order-status .order-main-bottom {
@@ -2626,7 +2638,7 @@ border-radius: 10px 10px 0px 0px;
 .admin-orders-order-wrap{
   margin: 10px auto;
   width: 340px;
-  height: 166.02px;
+  height: 266.02px;
   box-shadow: 0px 0px 5px 1px rgba(0,0,0,0.35);
 }
 

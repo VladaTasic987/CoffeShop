@@ -1,6 +1,6 @@
 
 
-export function OrderStatus({statusBar, orderOne, clock, mobileHand, arrowBack, formatTime, timeLeft, orderTwo, orderThree, changePage}) {
+export function OrderStatus({statusBar, orderOne, clock, mobileHand, orderTwoImg, orderThreeImg, arrowBack, formatTime, timeLeft, orderTwo, orderThree, changePage}) {
 
 const styleSecondParagraph = {
     color: timeLeft < 30 ? "#248CC5" : "#BFBFBF"
@@ -46,7 +46,11 @@ return (
         </div>
 
         <div className="order-main-middle">
-            <img src={mobileHand} alt="mobile-hand" />
+            <img
+                className={timeLeft >= 30 ? "mobileHand" : timeLeft <= 30 && timeLeft !== 0 ? "orderTwoImg"
+                    : timeLeft === 0  ? "orderThreeImg" : "orderTwoImg"}
+                src={timeLeft >= 30 ? mobileHand : timeLeft <= 30 && timeLeft !== 0 ? orderTwoImg
+                : timeLeft === 0  ? orderThreeImg : orderTwoImg} alt="mobile-hand" />
         </div>
 
         <div className="order-main-bottom">

@@ -1,7 +1,10 @@
 
 import { useState } from "react"
 
-export function AdminOrders({statusBar, logo, vector, order, setOrder, cartOrder, getCartOrder}) {
+export function AdminOrders({statusBar, allItems, logo, vector, order, setOrder, cartOrder, getCartOrder}) {
+
+        const [obj, setObj] = useState(false)
+
 
 
 
@@ -40,6 +43,9 @@ export function AdminOrders({statusBar, logo, vector, order, setOrder, cartOrder
                 <p className='first-p'>Priprema se</p>
                 <p className='second-p'>Sprema</p>
             </div>
+
+                {/*pocetak celog*/}
+    {allItems.length === 0 ? " " :
                 <div id="admin-order-toggle" className={isActive ? "admin-orders-order-wrap-closed" : "admin-orders-order-wrap"}>
 
 
@@ -51,18 +57,21 @@ export function AdminOrders({statusBar, logo, vector, order, setOrder, cartOrder
 
                 </div>
                     {
-                    isActive ? '' :
+                    isActive ? '' :  allItems.map((item) => (
+                        <div  id={item.id} className="admin-orders-order-fromCart">
+                            <p>{item.quantity}x {item.productName},  {item.milkType} ({item.cupSize.toUpperCase().slice(0, 1)})</p>
 
-                            order.map((item) => (
-            <div  id={item.id} className="admin-orders-order-fromCart">
-                    <p>{item.quantity}x {item.productName},  {item.milkType} ({item.cupSize.toUpperCase().slice(0, 1)})</p>
-
-                </div>
+                        </div>
+                    ))
 
 
-                            ))
+
+
+
+
                     }
-                </div>
+                </div>}
+{/*    kraj celog*/}
 
 
 

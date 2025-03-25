@@ -32,6 +32,8 @@ import mobileHand from './assets/Images/mobileHand.png'
 import orderTwo from './assets/Images/orderTwo.png'
 import orderThree from './assets/Images/orderThree.png'
 import vector from './assets/Images/vector.png'
+import orderTwoImg from './assets/Images/orderTwoImg.png'
+import orderThreeImg from './assets/Images/orderThreeImg.png'
 
 
 function App() {
@@ -69,6 +71,8 @@ function App() {
       orderTwo={orderTwo}
       orderThree={orderThree}
       vector={vector}
+      orderThreeImg={orderThreeImg}
+      orderTwoImg={orderTwoImg}
       />
 
     </>

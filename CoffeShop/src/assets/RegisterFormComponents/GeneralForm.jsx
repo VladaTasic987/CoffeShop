@@ -9,6 +9,7 @@ import { MainPage } from "../MainPageComponents/MainPage"
 import { LoyaltyProgram } from "../UserProfile/LoyaltyProgram"
 import { OrderStatus } from "../OrderStatus/OrderStatus"
 import {AdminOrders} from "../AdminOrdersComponents/AdminOrders.jsx";
+import {MainFooter} from "../MainPageComponents/MainFooter.jsx";
 
 import { useState, useEffect } from "react"
 import { useId } from "react";
@@ -16,7 +17,7 @@ import { useId } from "react";
 
 
 
-export function GeneralForm({logo, vector, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree}) {
+export function GeneralForm({logo, vector, forgotPassOne,forgotPassTwo, forgotPassThree, forgotPassFour, warningIcon, statusBar, avatar, arrowForward, coffeImg, plus, cups, wheels, minus, smallCup, mediumCup, largeCup, delBtn, loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, arrowBack, orderOne, clock, mobileHand, orderTwo, orderThree, orderTwoImg, orderThreeImg}) {
 
 const[idReg, setIdReg] = useState(4);
 const[name, setName] = useState("");
@@ -117,7 +118,7 @@ const logoutUser = (email) => {
     });
 };
 
-  console.log(userData);    
+ // console.log(userData);
 
 
 function newRegisterLogin() {
@@ -170,7 +171,19 @@ const [timeLeft, setTimeLeft] = useState(60); // 15 minutes in seconds
       };
 
 
-return(
+    const [allItems, setAllItems] = useState([...order]);
+    // Funkcija koja simulira generisanje niza objekata
+    const generateItems = (newItems) => {
+
+        setAllItems((prevItems) => {
+            return [...prevItems, ...newItems];
+        });
+        console.log(allItems);
+
+
+    };
+
+    return(
 
 <>
 
@@ -294,6 +307,8 @@ order={order}
 setOrder={setOrder}
 changePage={changePage}
 startTimer={startTimer}
+generateItems={generateItems}
+
 /> : page == "SubmitForm"}
 
 
@@ -319,6 +334,8 @@ clock={clock}
 mobileHand={mobileHand}
 arrowBack={arrowBack}
 orderThree={orderThree}
+orderThreeImg={orderThreeImg}
+orderTwoImg={orderTwoImg}
 
 formatTime={formatTime}
 timeLeft={timeLeft}
@@ -327,6 +344,7 @@ changePage={changePage}
 /> : null}
 
     <AdminOrders
+        allItems={allItems}
         order={order}
         setOrder={setOrder}
         logo={logo}
