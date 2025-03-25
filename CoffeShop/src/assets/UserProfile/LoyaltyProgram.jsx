@@ -27,7 +27,7 @@ return (
                 <img src={arrowBack} alt="back" /></button>
             {userData.map((user)=> user.loggedIn == true ? <button
             onClick={()=>{
-            logoutUser();   
+            logoutUser(user.email);   
             changePage("SubmitForm");}}
             className="log-out">Log out</button> : null)}
             

@@ -90,20 +90,32 @@ const checkExistingEmail = (email) => {
 const checkUserCredentialsLogin = (email, userPassword) => {
     const user = userData.find((user)=> user.email === email)
     if(user && user.password === userPassword) {
-    user.loggedIn = true
     return true
     }     
     else return false    
 }
 
-function logoutUser ()  {
-    setUserData(prevUserData =>
-        prevUserData.map(user =>
-            user.loggedIn ?  [...userData, {loggedIn: false}]  : user
-            
-        )
-    );
-  };
+const loginUser = (email, password) => {
+    setUserData(prevUserData => {
+        return prevUserData.map(user => {
+            if (user.email === email && user.password === password) {
+                return { ...user, loggedIn: true };
+            }
+            return user;
+        });
+    });
+};
+
+const logoutUser = (email) => {
+    setUserData(prevUserData => {
+        return prevUserData.map(user => {
+            if (user.email === email) {
+                return { ...user, loggedIn: false };
+            }
+            return user;
+        });
+    });
+};
 
   console.log(userData);    
 
@@ -177,6 +189,7 @@ changePage={changePage}
 checkUserCredentialsLogin={checkUserCredentialsLogin}
 clearInputs={clearInputs}
 checkExistingEmail={checkExistingEmail}
+loginUser={loginUser}
 /> : null}
 
 { page == "RegisterForm" ? <RegisterForm
