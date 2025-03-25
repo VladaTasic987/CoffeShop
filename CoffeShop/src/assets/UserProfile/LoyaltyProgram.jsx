@@ -7,7 +7,6 @@ export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyalt
 
     
 
-
 return (
 
     <div className="general-loyalty">
