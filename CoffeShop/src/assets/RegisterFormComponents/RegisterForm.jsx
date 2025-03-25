@@ -147,7 +147,7 @@ export function RegisterForm({logo, name, email, userPassword, getUserName, getU
 
 
         <div className="bottom-register">
-        <p>Već imate kreiran nalog? 
+        <p>Već imate kreiran nalog? &nbsp;
         <button
         onClick={()=> {
         changePage("SubmitForm")

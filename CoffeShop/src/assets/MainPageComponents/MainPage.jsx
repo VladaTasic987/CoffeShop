@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState } from "react";
 import { MainHeader } from "./MainHeader";
 import { MainFooter } from "./MainFooter";
 import { ShortEspresso } from "./ShortEspresso";
@@ -22,7 +22,7 @@ const [orederId, setOrderId] = useState(1);
 
 // Short Espresso Logic
 
-const [cupSizeShortEspresso, setCupSizeShortEspresso] = useState("");
+const [cupSizeShortEspresso, setCupSizeShortEspresso] = useState("M");
 const[shortEspQuantity, setShortEspQuantity] = useState(0);
 const[selectTypeCoffeShortEspresso, setSelectTypeCoffeShortEspresso] = useState("brazil-zrno");
 const[selectTypeMilkShortEspresso, setSelectTypeMilkShortEspresso] = useState("obicno-mleko")
@@ -72,7 +72,7 @@ function getSelectedTypeMilkShortEspresso(e) {
 
 // Long Espresso Logic
 
-const [cupSizeLongEspresso, setCupSizeLongEspresso] = useState("");
+const [cupSizeLongEspresso, setCupSizeLongEspresso] = useState("M");
 const[longEspQuantity, setLongEspQuantity] = useState(0);
 const[selectTypeCoffeLongEspresso, setSelectTypeCoffeLongEspresso] = useState("brazil-zrno");
 const[selectTypeMilkLongEspresso, setSelectTypeMilkLongEspresso] = useState("obicno-mleko")
@@ -114,7 +114,7 @@ function getSelectedTypeMilkLongEspresso(e) {
 
 // Short Espresso with Milk Logic
 
-const [cupSizeShortEspressoMilk, setCupSizeShortEspressoMilk] = useState("");
+const [cupSizeShortEspressoMilk, setCupSizeShortEspressoMilk] = useState("M");
 const[shortEspMilkQuantity, setShortEspMilkQuantity] = useState(0);
 const[selectTypeCoffeShortEspressoMilk, setSelectTypeCoffeShortEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkShortEspressoMilk, setSelectTypeMilkShortEspressoMilk] = useState("obicno-mleko")
@@ -157,7 +157,7 @@ function getSelectedTypeMilkShortEspressoMilk(e) {
 
 // Long Espresso with Milk Logic
 
-const [cupSizeLongEspressoMilk, setCupSizeLongEspressoMilk] = useState("");
+const [cupSizeLongEspressoMilk, setCupSizeLongEspressoMilk] = useState("M");
 const[longEspMilkQuantity, setLongEspMilkQuantity] = useState(0);
 const[selectTypeCoffeLongEspressoMilk, setSelectTypeCoffeLongEspressoMilk] = useState("brazil-zrno");
 const[selectTypeMilkLongEspressoMilk, setSelectTypeMilkLongEspressoMilk] = useState("obicno-mleko")
@@ -201,7 +201,7 @@ function getSelectedTypeMilkLongEspressoMilk(e) {
 // Americano Logic
 
 
-const [cupSizeAmericano, setCupSizeAmericano] = useState("");
+const [cupSizeAmericano, setCupSizeAmericano] = useState("M");
 const[americanoQuantity, setAmericanoQuantity] = useState(0);
 const[selectTypeCoffeAmericano, setSelectTypeCoffeAmericano] = useState("brazil-zrno");
 const[selectTypeMilkAmericano, setSelectTypeMilkAmericano] = useState("obicno-mleko")
@@ -251,8 +251,6 @@ const totalOrder = order.reduce((acc, num)=> (acc + num.productPrice) * num.quan
 ,0)
 
 const orderQuantity = order.reduce((acc, num)=> acc + num.quantity ,0)
-
-
 return(
 
         
@@ -413,7 +411,6 @@ changePage={changePage}
     <MainFooter 
     arrowForward={arrowForward}
     delBtn={delBtn}
-    
     order={order}
     handleDeleteOrder={handleDeleteOrder}
     totalOrder={totalOrder}

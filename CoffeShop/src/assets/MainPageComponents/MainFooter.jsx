@@ -1,3 +1,4 @@
+import {useState} from "react";
 
 
 export function MainFooter({arrowForward, order, delBtn, handleDeleteOrder, totalOrder, orderQuantity, startTimer, changePage}) {
@@ -16,10 +17,10 @@ return (
             </div>  
             <button
             onClick={()=>{
-            changePage("Timer");  
+            changePage("Timer");
             startTimer();
             }}
-            disabled={orderQuantity == 0 ? true : orderQuantity >= 6 ? true : false}
+            disabled={orderQuantity == 0 ? true : orderQuantity >= 11 ? true : false}
             ><img src={arrowForward} alt="" />Naruci</button>
         </div>
 

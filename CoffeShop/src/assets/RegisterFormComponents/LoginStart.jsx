@@ -95,14 +95,14 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           
 
           <div className="login-bottom">
-          <p>Još uvek nemate kreiran nalog 
+          <p>Još uvek nemate kreiran nalog 	&nbsp;
           <button 
           className="register-btn"
           onClick={()=>{
           changePage("RegisterForm")
           clearInputs()  
         }}
-          >Registruj se</button></p>
+          > Registruj se</button></p>
           </div>  
            
 

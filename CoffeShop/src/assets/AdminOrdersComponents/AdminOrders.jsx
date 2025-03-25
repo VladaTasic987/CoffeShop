@@ -1,11 +1,11 @@
 
 import { useState } from "react"
 
+export function AdminOrders({statusBar, logo, vector, order, setOrder, cartOrder, getCartOrder}) {
 
-export function AdminOrders({statusBar, logo, vector, order, setOrder}) {
 
 
-    const [isActive, setActive] = useState(false)
+        const [isActive, setActive] = useState(false)
     const ToggleClass = () => {
 
         setActive(!isActive);

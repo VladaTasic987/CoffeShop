@@ -93,11 +93,11 @@ return (
             value={null} 
             disabled selected>Odaberi zrno</option>
 
-            <option value="brasil-zrno">brazil</option>
+            <option value="brasil-zrno">Brazil</option>
 
-            <option value="kuba-zrno">kuba</option>
+            <option value="kuba-zrno">Kuba</option>
 
-            <option value="etiopia-zrno">etiopia</option>
+            <option value="etiopia-zrno">Etiopia</option>
 
             </select>              
         </div> 
@@ -115,9 +115,9 @@ return (
             >
             
 
-            <option 
-            value={null} 
-            disabled selected>Odaberi mleko</option>   
+            <option
+            value={null}
+            disabled selected>Odaberi mleko</option>
 
             <option value="obicno-mleko">Obično mleko</option>
 

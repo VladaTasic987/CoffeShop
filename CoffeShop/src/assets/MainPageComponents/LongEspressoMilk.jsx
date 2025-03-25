@@ -100,13 +100,13 @@ return (
             value={null} disabled selected
             >Odaberi zrno</option>
             <option 
-            value="brasil"
+            value="Brasil"
             >Brazil</option>
             <option 
-            value="kuba"
+            value="Kuba"
             >Kuba</option>
             <option 
-            value="etiopia"
+            value="Etiopia"
             >Etiopija</option>
             </select>              
         </div> 

@@ -302,7 +302,6 @@ changePage={changePage}
 /> : null}
 
     <AdminOrders
-
         order={order}
         setOrder={setOrder}
         logo={logo}
