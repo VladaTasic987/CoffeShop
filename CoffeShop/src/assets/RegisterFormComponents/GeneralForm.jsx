@@ -25,12 +25,16 @@ const[userPassword, setUserPassword] = useState("")
 const[confirmUserPassword, setConfirmUserPassword] = useState("");
 const[page, setPage] = useState("SubmitForm");
 const [order, setOrder] = useState([]);
+const[login, setLogin] = useState(false);
+
 
 const[userData, setUserData] = useState([
-    {id: 1, name: "Vladimir Tasic", email: "vlada@gmail.com",password: "12345678", loggedIn: false},
-    {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: false},
-    {id: 3, name: "Aleksandra Mircic", email: "test@quantox.com",password: "quantoxtest", loggedIn: false},
+    {id: 1, name: "Vladimir Tasic", email: "vlada@gmail.com",password: "12345678", loggedIn: login},
+    {id: 2, name: "Andjela Gajevic", email: "andjela@gmail.com",password: "11223344", loggedIn: login},
+    {id: 3, name: "Aleksandra Mircic", email: "test@quantox.com",password: "quantoxtest", loggedIn: login},
 ]);
+
+
 
 
 
@@ -86,11 +90,23 @@ const checkExistingEmail = (email) => {
 const checkUserCredentialsLogin = (email, userPassword) => {
     const user = userData.find((user)=> user.email === email)
     if(user && user.password === userPassword) {
-    user.loggedIn = true;
+    user.loggedIn = true
     return true
     }     
-    else return false      
+    else return false    
 }
+
+function logoutUser ()  {
+    setUserData(prevUserData =>
+        prevUserData.map(user =>
+            user.loggedIn ?  [...userData, {loggedIn: false}]  : user
+            
+        )
+    );
+  };
+
+  console.log(userData);    
+
 
 function newRegisterLogin() {
     userData.map((user)=> {
@@ -98,10 +114,6 @@ function newRegisterLogin() {
             user.loggedIn = true;
         }
     })
-}
-
-function LogOut() {
-    console.log("Vladimir")
 }
 
 function clearInputs() {
@@ -284,7 +296,7 @@ userData={userData}
 order={order}
 changePage={changePage}
 getOrderTotal={getOrderTotal}
-LogOut={LogOut}
+logoutUser={logoutUser}
 /> : null}
 
 {page == "Timer" ? <OrderStatus
