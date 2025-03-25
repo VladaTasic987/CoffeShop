@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack, checkExistingEmail}) {
+export function LoginStart({logo, changePage, email, userPassword, getUserEmail, getUserPassword, warningIcon, checkUserCredentialsLogin, clearInputs, statusBar, arrowBack, checkExistingEmail, loginUser}) {
   
   const validateLogin = checkUserCredentialsLogin(email, userPassword);
 
@@ -89,7 +89,10 @@ export function LoginStart({logo, changePage, email, userPassword, getUserEmail,
           <button 
           className="submit-btn"
           disabled = {!validateLogin}
-          onClick={()=>changePage("Main")}
+          onClick={()=>
+            {changePage("Main");
+            loginUser(email, userPassword); 
+            }}
           >Prijavi se</button>
 
           

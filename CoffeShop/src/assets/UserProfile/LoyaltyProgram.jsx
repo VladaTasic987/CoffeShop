@@ -1,9 +1,11 @@
 
 
-export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack, userData, order, changePage, getOrderTotal, LogOut}) {
+export function LoyaltyProgram ({loyaltyAvatar, loyaltyCup, loyaltyEmpty, loyaltyFree, statusBar, arrowBack, userData, order, changePage, getOrderTotal, logoutUser}) {
 
 
+    console.log(userData);    
 
+    
 
 
 return (
@@ -23,11 +25,11 @@ return (
             onClick={()=>changePage("Main")}
             >
                 <img src={arrowBack} alt="back" /></button>
-            <button
+            {userData.map((user)=> user.loggedIn == true ? <button
             onClick={()=>{
-            LogOut();    
-            changePage("SubmitForm")}}
-            className="log-out">Log out</button>
+            logoutUser(user.email);   
+            changePage("SubmitForm");}}
+            className="log-out">Log out</button> : null)}
             
         </div>
 
